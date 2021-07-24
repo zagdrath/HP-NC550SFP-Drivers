@@ -1,0 +1,1571 @@
+
+;-------------------------------------------------------------------------------
+; be2nd62.inf
+; Emulex Ethernet Device Driver
+; Copyright 2012 Emulex.
+;-------------------------------------------------------------------------------
+[Version]
+Signature="$Windows NT$"
+Class=Net
+ClassGUID={4d36e972-e325-11ce-bfc1-08002be10318}
+Provider=%SE%
+CatalogFile=be2nd62.cat
+DriverVer=02/06/2012,4.1.370.0
+
+[Manufacturer]
+%SE% = SE, NTAMD64.6.1
+
+[ControlFlags]
+ExcludeFromSelect = *
+
+[SE]
+; Empty section for other OSes and architectures
+
+
+
+
+
+[SE.NTAMD64.6.1]
+; Emulex
+%PCI\VEN_19A2&DEV_0211.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0211
+%PCI\VEN_19A2&DEV_0215.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0215
+%PCI\VEN_19A2&DEV_0211&SUBSYS_021119A2.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0211&SUBSYS_021119A2
+%PCI\VEN_19A2&DEV_0211&SUBSYS_10CE1734.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0211&SUBSYS_10CE1734
+%PCI\VEN_19A2&DEV_0211&SUBSYS_100019A2.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0211&SUBSYS_100019A2
+%PCI\VEN_19A2&DEV_0211&SUBSYS_101019A2.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0211&SUBSYS_101019A2
+%PCI\VEN_19A2&DEV_0211&SUBSYS_200019A2.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0211&SUBSYS_200019A2
+%PCI\VEN_19A2&DEV_0211&SUBSYS_201019A2.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0211&SUBSYS_201019A2
+%PCI\VEN_19A2&DEV_0211&SUBSYS_102019A2.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0211&SUBSYS_102019A2
+%PCI\VEN_19A2&DEV_0211&SUBSYS_103019A2.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0211&SUBSYS_103019A2
+%PCI\VEN_19A2&DEV_0215&SUBSYS_021519A2.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0215&SUBSYS_021519A2
+%PCI\VEN_19A2&DEV_0215&SUBSYS_10CE1734.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0215&SUBSYS_10CE1734
+%PCI\VEN_19A2&DEV_0211&SUBSYS_100119A2.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0211&SUBSYS_100119A2
+%PCI\VEN_19A2&DEV_0211&SUBSYS_101119A2.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0211&SUBSYS_101119A2
+%PCI\VEN_19A2&DEV_0211&SUBSYS_200119A2.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0211&SUBSYS_200119A2
+%PCI\VEN_19A2&DEV_0211&SUBSYS_201119A2.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0211&SUBSYS_201119A2
+%PCI\VEN_19A2&DEV_0211&SUBSYS_102119A2.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0211&SUBSYS_102119A2
+%PCI\VEN_19A2&DEV_0211&SUBSYS_103119A2.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0211&SUBSYS_103119A2
+
+; Emulex
+%PCI\VEN_19A2&DEV_0221.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0221
+%PCI\VEN_19A2&DEV_0221&SUBSYS_022119A2.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0221&SUBSYS_022119A2
+
+; Emulex
+%PCI\VEN_19A2&DEV_0700&SUBSYS_E62010DF.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0700&SUBSYS_E62010DF
+%PCI\VEN_19A2&DEV_0700&SUBSYS_E62210DF.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0700&SUBSYS_E62210DF
+%PCI\VEN_19A2&DEV_0700&SUBSYS_E62410DF.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0700&SUBSYS_E62410DF
+%PCI\VEN_19A2&DEV_0700&SUBSYS_E62610DF.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0700&SUBSYS_E62610DF
+%PCI\VEN_19A2&DEV_0700&SUBSYS_E63610DF.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0700&SUBSYS_E63610DF
+%PCI\VEN_19A2&DEV_0700&SUBSYS_E63810DF.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0700&SUBSYS_E63810DF
+%PCI\VEN_19A2&DEV_0700&SUBSYS_E64010DF.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0700&SUBSYS_E64010DF
+%PCI\VEN_19A2&DEV_0700&SUBSYS_E64210DF.DeviceDesc% = be2net_no_wol.ndi,PCI\VEN_19A2&DEV_0700&SUBSYS_E64210DF
+%PCI\VEN_19A2&DEV_0700&SUBSYS_E64410DF.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0700&SUBSYS_E64410DF
+%PCI\VEN_19A2&DEV_0700&SUBSYS_E64610DF.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0700&SUBSYS_E64610DF
+%PCI\VEN_19A2&DEV_0700&SUBSYS_E65610DF.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0700&SUBSYS_E65610DF
+%PCI\VEN_19A2&DEV_0700&SUBSYS_E65810DF.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0700&SUBSYS_E65810DF
+%PCI\VEN_19A2&DEV_0700&SUBSYS_E60010DF.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0700&SUBSYS_E60010DF
+%PCI\VEN_19A2&DEV_0700&SUBSYS_E60210DF.DeviceDesc% = be2net_no_wol.ndi,PCI\VEN_19A2&DEV_0700&SUBSYS_E60210DF
+%PCI\VEN_19A2&DEV_0700&SUBSYS_E60410DF.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0700&SUBSYS_E60410DF
+%PCI\VEN_19A2&DEV_0700&SUBSYS_E60610DF.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0700&SUBSYS_E60610DF
+%PCI\VEN_19A2&DEV_0700&SUBSYS_E61610DF.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0700&SUBSYS_E61610DF
+%PCI\VEN_19A2&DEV_0700&SUBSYS_E61810DF.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0700&SUBSYS_E61810DF
+%PCI\VEN_19A2&DEV_0700&SUBSYS_E65110DF.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0700&SUBSYS_E65110DF
+%PCI\VEN_19A2&DEV_0710&SUBSYS_E72010DF.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0710&SUBSYS_E72010DF
+%PCI\VEN_19A2&DEV_0710&SUBSYS_E72210DF.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0710&SUBSYS_E72210DF
+%PCI\VEN_19A2&DEV_0710&SUBSYS_E72310DF.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0710&SUBSYS_E72310DF
+%PCI\VEN_19A2&DEV_0710&SUBSYS_E72410DF.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0710&SUBSYS_E72410DF
+%PCI\VEN_19A2&DEV_0710&SUBSYS_E72610DF.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0710&SUBSYS_E72610DF
+%PCI\VEN_19A2&DEV_0710&SUBSYS_E73610DF.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0710&SUBSYS_E73610DF
+%PCI\VEN_19A2&DEV_0710&SUBSYS_E73810DF.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0710&SUBSYS_E73810DF
+%PCI\VEN_19A2&DEV_0710&SUBSYS_E74010DF.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0710&SUBSYS_E74010DF
+%PCI\VEN_19A2&DEV_0710&SUBSYS_E74210DF.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0710&SUBSYS_E74210DF
+%PCI\VEN_19A2&DEV_0710&SUBSYS_E74310DF.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0710&SUBSYS_E74310DF
+%PCI\VEN_19A2&DEV_0710&SUBSYS_E74410DF.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0710&SUBSYS_E74410DF
+%PCI\VEN_19A2&DEV_0710&SUBSYS_E74610DF.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0710&SUBSYS_E74610DF
+%PCI\VEN_19A2&DEV_0710&SUBSYS_E75610DF.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0710&SUBSYS_E75610DF
+%PCI\VEN_19A2&DEV_0710&SUBSYS_E75810DF.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0710&SUBSYS_E75810DF
+%PCI\VEN_19A2&DEV_0710&SUBSYS_E70010DF.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0710&SUBSYS_E70010DF
+%PCI\VEN_19A2&DEV_0710&SUBSYS_E70210DF.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0710&SUBSYS_E70210DF
+%PCI\VEN_19A2&DEV_0710&SUBSYS_E70310DF.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0710&SUBSYS_E70310DF
+%PCI\VEN_19A2&DEV_0710&SUBSYS_E70410DF.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0710&SUBSYS_E70410DF
+%PCI\VEN_19A2&DEV_0710&SUBSYS_E70610DF.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0710&SUBSYS_E70610DF
+%PCI\VEN_19A2&DEV_0710&SUBSYS_E71610DF.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0710&SUBSYS_E71610DF
+%PCI\VEN_19A2&DEV_0710&SUBSYS_E71810DF.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0710&SUBSYS_E71810DF
+%PCI\VEN_19A2&DEV_0710&SUBSYS_E75110DF.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0710&SUBSYS_E75110DF
+
+; IBM
+%PCI\VEN_19A2&DEV_0700&SUBSYS_E62810DF.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0700&SUBSYS_E62810DF
+%PCI\VEN_19A2&DEV_0700&SUBSYS_E62910DF.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0700&SUBSYS_E62910DF
+%PCI\VEN_19A2&DEV_0700&SUBSYS_E63010DF.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0700&SUBSYS_E63010DF
+%PCI\VEN_19A2&DEV_0700&SUBSYS_E61110DF.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0700&SUBSYS_E61110DF
+%PCI\VEN_19A2&DEV_0700&SUBSYS_E64810DF.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0700&SUBSYS_E64810DF
+%PCI\VEN_19A2&DEV_0700&SUBSYS_E64910DF.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0700&SUBSYS_E64910DF
+%PCI\VEN_19A2&DEV_0700&SUBSYS_E65010DF.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0700&SUBSYS_E65010DF
+%PCI\VEN_19A2&DEV_0700&SUBSYS_E60810DF.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0700&SUBSYS_E60810DF
+%PCI\VEN_19A2&DEV_0700&SUBSYS_E60910DF.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0700&SUBSYS_E60910DF
+%PCI\VEN_19A2&DEV_0700&SUBSYS_E61010DF.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0700&SUBSYS_E61010DF
+%PCI\VEN_19A2&DEV_0710&SUBSYS_E72810DF.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0710&SUBSYS_E72810DF
+%PCI\VEN_19A2&DEV_0710&SUBSYS_E72910DF.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0710&SUBSYS_E72910DF
+%PCI\VEN_19A2&DEV_0710&SUBSYS_E72A10DF.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0710&SUBSYS_E72A10DF
+%PCI\VEN_19A2&DEV_0710&SUBSYS_E73010DF.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0710&SUBSYS_E73010DF
+%PCI\VEN_19A2&DEV_0710&SUBSYS_E71110DF.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0710&SUBSYS_E71110DF
+%PCI\VEN_19A2&DEV_0710&SUBSYS_03D01014.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0710&SUBSYS_03D01014
+%PCI\VEN_19A2&DEV_0710&SUBSYS_03D11014.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0710&SUBSYS_03D11014
+%PCI\VEN_19A2&DEV_0710&SUBSYS_E73110DF.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0710&SUBSYS_E73110DF
+%PCI\VEN_19A2&DEV_0710&SUBSYS_E73310DF.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0710&SUBSYS_E73310DF
+%PCI\VEN_19A2&DEV_0710&SUBSYS_E73510DF.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0710&SUBSYS_E73510DF
+%PCI\VEN_19A2&DEV_0710&SUBSYS_E74810DF.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0710&SUBSYS_E74810DF
+%PCI\VEN_19A2&DEV_0710&SUBSYS_E75010DF.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0710&SUBSYS_E75010DF
+%PCI\VEN_19A2&DEV_0710&SUBSYS_E70810DF.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0710&SUBSYS_E70810DF
+%PCI\VEN_19A2&DEV_0710&SUBSYS_E71010DF.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0710&SUBSYS_E71010DF
+
+%PCI\VEN_19A2&DEV_0710&SUBSYS_E70B10DF.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0710&SUBSYS_E70B10DF
+%PCI\VEN_19A2&DEV_0710&SUBSYS_E70F10DF.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0710&SUBSYS_E70F10DF
+%PCI\VEN_19A2&DEV_0710&SUBSYS_E71710DF.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0710&SUBSYS_E71710DF
+%PCI\VEN_19A2&DEV_0710&SUBSYS_E71910DF.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0710&SUBSYS_E71910DF
+%PCI\VEN_19A2&DEV_0710&SUBSYS_E71B10DF.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0710&SUBSYS_E71B10DF
+%PCI\VEN_19A2&DEV_0710&SUBSYS_E71C10DF.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0710&SUBSYS_E71C10DF
+%PCI\VEN_19A2&DEV_0710&SUBSYS_E71510DF.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0710&SUBSYS_E71510DF
+%PCI\VEN_19A2&DEV_0710&SUBSYS_E71E10DF.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0710&SUBSYS_E71E10DF
+%PCI\VEN_19A2&DEV_0710&SUBSYS_E71F10DF.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0710&SUBSYS_E71F10DF
+%PCI\VEN_19A2&DEV_0710&SUBSYS_E71A10DF.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0710&SUBSYS_E71A10DF
+
+%PCI\VEN_19A2&DEV_0710&SUBSYS_E70C10DF.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0710&SUBSYS_E70C10DF
+%PCI\VEN_19A2&DEV_0710&SUBSYS_E70D10DF.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0710&SUBSYS_E70D10DF
+%PCI\VEN_19A2&DEV_0710&SUBSYS_E70E10DF.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0710&SUBSYS_E70E10DF
+%PCI\VEN_19A2&DEV_0710&SUBSYS_04091014.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0710&SUBSYS_04091014
+%PCI\VEN_19A2&DEV_0710&SUBSYS_040A1014.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0710&SUBSYS_040A1014
+
+; IBM - 1G
+%PCI\VEN_19A2&DEV_0710&SUBSYS_03D21014.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0710&SUBSYS_03D21014
+%PCI\VEN_19A2&DEV_0710&SUBSYS_E70A10DF.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0710&SUBSYS_E70A10DF
+
+; Foxconn
+%PCI\VEN_19A2&DEV_0710&SUBSYS_E72510DF.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0710&SUBSYS_E72510DF
+
+; Dell
+%PCI\VEN_19A2&DEV_0700&SUBSYS_E63210DF.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0700&SUBSYS_E63210DF
+%PCI\VEN_19A2&DEV_0700&SUBSYS_E65210DF.DeviceDesc% = be2net_no_wol.ndi,PCI\VEN_19A2&DEV_0700&SUBSYS_E65210DF
+%PCI\VEN_19A2&DEV_0700&SUBSYS_E61210DF.DeviceDesc% = be2net_no_wol.ndi,PCI\VEN_19A2&DEV_0700&SUBSYS_E61210DF
+%PCI\VEN_19A2&DEV_0710&SUBSYS_E73210DF.DeviceDesc% = nomad.ndi,PCI\VEN_19A2&DEV_0710&SUBSYS_E73210DF
+%PCI\VEN_19A2&DEV_0710&SUBSYS_E75210DF.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0710&SUBSYS_E75210DF
+%PCI\VEN_19A2&DEV_0710&SUBSYS_E71210DF.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0710&SUBSYS_E71210DF
+
+; Hitachi Data Systems
+%PCI\VEN_19A2&DEV_0700&SUBSYS_E63410DF.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0700&SUBSYS_E63410DF
+%PCI\VEN_19A2&DEV_0700&SUBSYS_E65410DF.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0700&SUBSYS_E65410DF
+%PCI\VEN_19A2&DEV_0700&SUBSYS_E61410DF.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0700&SUBSYS_E61410DF
+%PCI\VEN_19A2&DEV_0710&SUBSYS_E73410DF.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0710&SUBSYS_E73410DF
+%PCI\VEN_19A2&DEV_0710&SUBSYS_E75410DF.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0710&SUBSYS_E75410DF
+%PCI\VEN_19A2&DEV_0710&SUBSYS_E71410DF.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0710&SUBSYS_E71410DF
+%PCI\VEN_19A2&DEV_0710&SUBSYS_304B1054.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0710&SUBSYS_304B1054
+%PCI\VEN_19A2&DEV_0710&SUBSYS_304C1054.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0710&SUBSYS_304C1054
+%PCI\VEN_19A2&DEV_0710&SUBSYS_304D1054.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0710&SUBSYS_304D1054
+%PCI\VEN_19A2&DEV_0710&SUBSYS_30571054.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0710&SUBSYS_30571054
+%PCI\VEN_19A2&DEV_0710&SUBSYS_30581054.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0710&SUBSYS_30581054
+%PCI\VEN_19A2&DEV_0710&SUBSYS_30541054.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0710&SUBSYS_30541054
+%PCI\VEN_19A2&DEV_0710&SUBSYS_304E1054.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0710&SUBSYS_304E1054
+%PCI\VEN_19A2&DEV_0710&SUBSYS_304F1054.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0710&SUBSYS_304F1054
+
+; Sun
+%PCI\VEN_19A2&DEV_0700&SUBSYS_E69010DF.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0700&SUBSYS_E69010DF
+%PCI\VEN_19A2&DEV_0700&SUBSYS_E69210DF.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0700&SUBSYS_E69210DF
+%PCI\VEN_19A2&DEV_0700&SUBSYS_E69E10DF.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0700&SUBSYS_E69E10DF
+%PCI\VEN_19A2&DEV_0700&SUBSYS_E6A010DF.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0700&SUBSYS_E6A010DF
+%PCI\VEN_19A2&DEV_0700&SUBSYS_E6A210DF.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0700&SUBSYS_E6A210DF
+%PCI\VEN_19A2&DEV_0700&SUBSYS_E6AE10DF.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0700&SUBSYS_E6AE10DF
+%PCI\VEN_19A2&DEV_0700&SUBSYS_E68010DF.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0700&SUBSYS_E68010DF
+%PCI\VEN_19A2&DEV_0700&SUBSYS_E68210DF.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0700&SUBSYS_E68210DF
+%PCI\VEN_19A2&DEV_0700&SUBSYS_E68E10DF.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0700&SUBSYS_E68E10DF
+%PCI\VEN_19A2&DEV_0710&SUBSYS_E79010DF.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0710&SUBSYS_E79010DF
+%PCI\VEN_19A2&DEV_0710&SUBSYS_E79210DF.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0710&SUBSYS_E79210DF
+%PCI\VEN_19A2&DEV_0710&SUBSYS_E79E10DF.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0710&SUBSYS_E79E10DF
+%PCI\VEN_19A2&DEV_0710&SUBSYS_E7A010DF.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0710&SUBSYS_E7A010DF
+%PCI\VEN_19A2&DEV_0710&SUBSYS_E7A210DF.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0710&SUBSYS_E7A210DF
+%PCI\VEN_19A2&DEV_0710&SUBSYS_E7AE10DF.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0710&SUBSYS_E7AE10DF
+%PCI\VEN_19A2&DEV_0710&SUBSYS_E78010DF.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0710&SUBSYS_E78010DF
+%PCI\VEN_19A2&DEV_0710&SUBSYS_E78210DF.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0710&SUBSYS_E78210DF
+%PCI\VEN_19A2&DEV_0710&SUBSYS_E78E10DF.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0710&SUBSYS_E78E10DF
+
+; HP
+%PCI\VEN_19A2&DEV_0700&SUBSYS_1747103C.DeviceDesc% = be2net_hp.ndi,PCI\VEN_19A2&DEV_0700&SUBSYS_1747103C
+%PCI\VEN_19A2&DEV_0700&SUBSYS_1746103C.DeviceDesc% = be2net_hp.ndi,PCI\VEN_19A2&DEV_0700&SUBSYS_1746103C
+%PCI\VEN_19A2&DEV_0700&SUBSYS_1749103C.DeviceDesc% = be2net_hp.ndi,PCI\VEN_19A2&DEV_0700&SUBSYS_1749103C
+%PCI\VEN_19A2&DEV_0700&SUBSYS_1748103C.DeviceDesc% = be2net_hp.ndi,PCI\VEN_19A2&DEV_0700&SUBSYS_1748103C
+%PCI\VEN_19A2&DEV_0700&SUBSYS_174B103C.DeviceDesc% = be2net_hp.ndi,PCI\VEN_19A2&DEV_0700&SUBSYS_174B103C
+%PCI\VEN_19A2&DEV_0700&SUBSYS_174A103C.DeviceDesc% = be2net_hp.ndi,PCI\VEN_19A2&DEV_0700&SUBSYS_174A103C
+%PCI\VEN_19A2&DEV_0700&SUBSYS_3314103C.DeviceDesc% = be2net_hp.ndi,PCI\VEN_19A2&DEV_0700&SUBSYS_3314103C
+%PCI\VEN_19A2&DEV_0710&SUBSYS_3340103C.DeviceDesc% = be2net_hp.ndi,PCI\VEN_19A2&DEV_0710&SUBSYS_3340103C
+%PCI\VEN_19A2&DEV_0710&SUBSYS_3341103C.DeviceDesc% = be2net_hp.ndi,PCI\VEN_19A2&DEV_0710&SUBSYS_3341103C
+%PCI\VEN_19A2&DEV_0710&SUBSYS_17A6103C.DeviceDesc% = be2net_hp.ndi,PCI\VEN_19A2&DEV_0710&SUBSYS_17A6103C
+%PCI\VEN_19A2&DEV_0710&SUBSYS_17A3103C.DeviceDesc% = be2net_hp.ndi,PCI\VEN_19A2&DEV_0710&SUBSYS_17A3103C
+%PCI\VEN_19A2&DEV_0710&SUBSYS_3342103C.DeviceDesc% = be2net_hp.ndi,PCI\VEN_19A2&DEV_0710&SUBSYS_3342103C
+%PCI\VEN_19A2&DEV_0710&SUBSYS_3343103C.DeviceDesc% = be2net_hp.ndi,PCI\VEN_19A2&DEV_0710&SUBSYS_3343103C
+%PCI\VEN_19A2&DEV_0710&SUBSYS_3344103C.DeviceDesc% = be2net_hp.ndi,PCI\VEN_19A2&DEV_0710&SUBSYS_3344103C
+%PCI\VEN_19A2&DEV_0710&SUBSYS_3345103C.DeviceDesc% = be2net_hp.ndi,PCI\VEN_19A2&DEV_0710&SUBSYS_3345103C
+%PCI\VEN_19A2&DEV_0710&SUBSYS_3315103C.DeviceDesc% = be2net_hp.ndi,PCI\VEN_19A2&DEV_0710&SUBSYS_3315103C
+%PCI\VEN_19A2&DEV_0710&SUBSYS_3376103C.DeviceDesc% = be2net_hp.ndi,PCI\VEN_19A2&DEV_0710&SUBSYS_3376103C
+%PCI\VEN_19A2&DEV_0710&SUBSYS_337B103C.DeviceDesc% = be2net_hp.ndi,PCI\VEN_19A2&DEV_0710&SUBSYS_337B103C
+%PCI\VEN_19A2&DEV_0710&SUBSYS_337C103C.DeviceDesc% = be2net_hp.ndi,PCI\VEN_19A2&DEV_0710&SUBSYS_337C103C
+
+%PCI\VEN_19A2&DEV_0710&SUBSYS_3391103C.DeviceDesc% = be2net_hp.ndi,PCI\VEN_19A2&DEV_0710&SUBSYS_3391103C
+%PCI\VEN_19A2&DEV_0710&SUBSYS_3392103C.DeviceDesc% = be2net_hp.ndi,PCI\VEN_19A2&DEV_0710&SUBSYS_3392103C
+%PCI\VEN_19A2&DEV_0710&SUBSYS_177B103C.DeviceDesc% = be2net_hp.ndi,PCI\VEN_19A2&DEV_0710&SUBSYS_177B103C
+%PCI\VEN_19A2&DEV_0710&SUBSYS_184E103C.DeviceDesc% = be2net_hp.ndi,PCI\VEN_19A2&DEV_0710&SUBSYS_184E103C
+
+
+; Fujitsu
+%PCI\VEN_19A2&DEV_0700&SUBSYS_117A1734.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0700&SUBSYS_117A1734
+%PCI\VEN_19A2&DEV_0700&SUBSYS_117C1734.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0700&SUBSYS_117C1734
+%PCI\VEN_19A2&DEV_0700&SUBSYS_117E1734.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0700&SUBSYS_117E1734
+%PCI\VEN_19A2&DEV_0700&SUBSYS_11801734.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0700&SUBSYS_11801734
+%PCI\VEN_19A2&DEV_0700&SUBSYS_11821734.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0700&SUBSYS_11821734
+%PCI\VEN_19A2&DEV_0700&SUBSYS_11841734.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0700&SUBSYS_11841734
+%PCI\VEN_19A2&DEV_0700&SUBSYS_11861734.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0700&SUBSYS_11861734
+%PCI\VEN_19A2&DEV_0700&SUBSYS_11881734.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0700&SUBSYS_11881734
+%PCI\VEN_19A2&DEV_0700&SUBSYS_118A1734.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0700&SUBSYS_118A1734
+%PCI\VEN_19A2&DEV_0710&SUBSYS_11A31734.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0710&SUBSYS_11A31734
+%PCI\VEN_19A2&DEV_0710&SUBSYS_11A41734.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0710&SUBSYS_11A41734
+%PCI\VEN_19A2&DEV_0710&SUBSYS_11A51734.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0710&SUBSYS_11A51734
+%PCI\VEN_19A2&DEV_0710&SUBSYS_11A01734.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0710&SUBSYS_11A01734
+%PCI\VEN_19A2&DEV_0710&SUBSYS_11A11734.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0710&SUBSYS_11A11734
+%PCI\VEN_19A2&DEV_0710&SUBSYS_11A21734.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0710&SUBSYS_11A21734
+%PCI\VEN_19A2&DEV_0710&SUBSYS_119D1734.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0710&SUBSYS_119D1734
+%PCI\VEN_19A2&DEV_0710&SUBSYS_119E1734.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0710&SUBSYS_119E1734
+%PCI\VEN_19A2&DEV_0710&SUBSYS_119F1734.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0710&SUBSYS_119F1734
+
+; Fujitsu 1g
+%PCI\VEN_19A2&DEV_0710&SUBSYS_11C11734.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0710&SUBSYS_11C11734
+%PCI\VEN_19A2&DEV_0710&SUBSYS_11C21734.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0710&SUBSYS_11C21734
+%PCI\VEN_19A2&DEV_0710&SUBSYS_11C91734.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0710&SUBSYS_11C91734
+
+; Cisco
+%PCI\VEN_19A2&DEV_0700&SUBSYS_006E1137.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0700&SUBSYS_006E1137
+%PCI\VEN_19A2&DEV_0710&SUBSYS_006F1137.DeviceDesc% = be2net.ndi,PCI\VEN_19A2&DEV_0710&SUBSYS_006F1137
+
+;-------------------------------------------------------------------------------
+; Nomad
+;-------------------------------------------------------------------------------
+%PCI\VEN_19A2&DEV_0710&SUBSYS_E72110DF.DeviceDesc% = nomad.ndi,PCI\VEN_19A2&DEV_0710&SUBSYS_E72110DF
+
+;-------------------------------------------------------------------------------
+; BladeEngine Device
+;
+[be2net.ndi]
+Characteristics = 0x84 ; NCF_HAS_UI | NCF_PHYSICAL
+BusType         = 5
+AddReg          = be2net.Reg, be2net.common_params, be2net.fc_params, be2net.rss_params, be2net.toe_params, be2net.toe_optional, be2net.wol_params, be2net.vmq_params, be2net.ets_mode, be2net.rss_16queue, be2net.rsc_params
+DelReg          = be2net.delreg
+CopyFiles       = be2net.CopyFiles, be2net.CopyFiles.DLL, be2net.CopyFiles.HELP
+
+*IfType = 6; IF_TYPE_ETHERNET_CSMACD
+*MediaType      = 0; NdisMedium802_3
+*PhysicalMediaType = 14 ; NdisPhysicalMedium802_3
+
+[be2net.ndi.Services]
+AddService      = be2net, 2, be2net.Service, be2net.EventLog
+
+[be2net.ndi.HW]
+Include=machine.inf
+Needs=PciIoSpaceNotRequired
+AddReg = be2net_addreg
+
+;-------------------------------------------------------------------------------
+; HP Devices ship with TOE disabled by default and RSS hidden.
+;
+[be2net_hp.ndi]
+Characteristics = 0x84 ; NCF_HAS_UI | NCF_PHYSICAL
+BusType         = 5
+AddReg          = be2net.Reg, be2net.common_params, be2net.fc_params, be2net.rss_params, be2net.toe_params, be2net.toe_disabled, be2net.wol_params, be2net.vmq_params, be2net.ets_mode, be2net.rss_16queue, be2net.rsc_params
+DelReg          = be2net.delreg
+CopyFiles       = be2net.CopyFiles, be2net.CopyFiles.DLL, be2net.CopyFiles.HELP
+
+*IfType = 6; IF_TYPE_ETHERNET_CSMACD
+*MediaType      = 0; NdisMedium802_3
+*PhysicalMediaType = 14 ; NdisPhysicalMedium802_3
+
+[be2net_hp.ndi.Services]
+AddService      = be2net, 2, be2net.Service, be2net.EventLog
+
+[be2net_hp.ndi.HW]
+Include=machine.inf
+Needs=PciIoSpaceNotRequired
+AddReg = be2net_addreg
+
+
+;-------------------------------------------------------------------------------
+; Devices that disable Wake on LAN
+;
+[be2net_no_wol.ndi]
+Characteristics = 0x84 ; NCF_HAS_UI | NCF_PHYSICAL
+BusType         = 5
+AddReg          = be2net.Reg, be2net.common_params, be2net.fc_params, be2net.rss_params, be2net.toe_params, be2net.toe_optional, be2net.vmq_params, be2net.ets_mode, be2net.rsc_params
+DelReg          = be2net.delreg
+CopyFiles       = be2net.CopyFiles, be2net.CopyFiles.DLL, be2net.CopyFiles.HELP
+
+*IfType = 6; IF_TYPE_ETHERNET_CSMACD
+*MediaType      = 0; NdisMedium802_3
+*PhysicalMediaType = 14 ; NdisPhysicalMedium802_3
+
+[be2net_no_wol.ndi.Services]
+AddService      = be2net, 2, be2net.Service, be2net.EventLog
+
+[be2net_no_wol.ndi.HW]
+Include=machine.inf
+Needs=PciIoSpaceNotRequired
+AddReg = be2net_addreg
+
+;-------------------------------------------------------------------------------
+; Nomad
+;-------------------------------------------------------------------------------
+[nomad.ndi]
+Characteristics     = 0x84 ; NCF_HAS_UI | NCF_PHYSICAL
+BusType             = 5
+AddReg              = ndi.reg, msf.params.ndi.reg, elx.params.ndi.reg
+DelReg              = be2net.delreg
+CopyFiles           = be2net.CopyFiles
+*IfType             = 6; IF_TYPE_ETHERNET_CSMACD
+*MediaType          = 0; NdisMedium802_3
+*PhysicalMediaType  = 14 ; NdisPhysicalMedium802_3
+
+[nomad.ndi.Services]
+AddService          = be2net, 2, be2net.Service, be2net.EventLog
+
+[nomad.ndi.HW]
+Include             = machine.inf
+Needs               = PciIoSpaceNotRequired
+AddReg      = be2net_addreg
+
+;-----------------------------------------------------------------------------
+; Common Registry information
+;
+[be2net.Reg]
+HKR, Ndi,                         Service,             0, "be2net"
+HKR, Ndi\Interfaces,              UpperRange,          0, "ndis5"
+HKR, Ndi\Interfaces,              LowerRange,          0, "ethernet"
+HKR,,EnumPropPages32,,"bepnic.dll,PropPage_bendis5x"
+
+;-------------------------------------------------------------------------------
+; Nomad
+;-------------------------------------------------------------------------------
+[ndi.reg]
+HKR,Ndi,Service,,"be2net"
+HKR,Ndi\Interfaces,UpperRange,,"ndis5"
+HKR,Ndi\Interfaces,LowerRange,,"ethernet"
+
+;-----------------------------------------------------------------------------
+; Driver and Service Section
+;
+[be2net.CopyFiles]
+be2nd62.sys,,,2
+
+
+[be2net.CopyFiles.DLL]
+bepnic.dll,,,2
+
+[be2net.CopyFiles.HELP]
+bepnic.rtf,,,2
+
+
+
+
+[be2net.Service]
+DisplayName     = %be2net.Service.DispName%
+ServiceType     = 1 ;%SERVICE_KERNEL_DRIVER%
+StartType       = 3 ;%SERVICE_DEMAND_START%
+ErrorControl    = 1 ;%SERVICE_ERROR_NORMAL%
+ServiceBinary   = %12%\be2nd62.sys
+LoadOrderGroup  = NDIS
+AddReg          = TextModeFlags.Reg
+
+[be2net.EventLog]
+AddReg = be2net.AddEventLog.Reg
+
+
+; The first two lines create the registry keys "Interrupt Management" and 
+; "MessageSignaledInterruptProperties".  
+[be2net_addreg]
+HKR, "Interrupt Management",, 0x10,,
+HKR, "Interrupt Management\MessageSignaledInterruptProperties",, 0x10,,
+HKR, "Interrupt Management\MessageSignaledInterruptProperties", MSISupported, 0x00010001, 1
+HKR, "Interrupt Management\MessageSignaledInterruptProperties", MessageNumberLimit, 0x00010001, 32
+HKR,e5b3b5ac-9725-4f78-963f-03dfb1d828c7,ASPMOptOut,0x10001,1
+
+
+[be2net.AddEventLog.Reg]
+HKR, , EventMessageFile, 0x00020000, "%%SystemRoot%%\System32\netevent.dll;%%SystemRoot%%\System32\drivers\be2nd62.sys"
+HKR, , TypesSupported,   0x00010001, 7
+
+[TextModeFlags.Reg]
+HKR, , TextModeFlags,    0x00010001, 0x0001
+
+[SourceDisksNames]
+1 = %MEDIA_DESCRIPTION%,,,""
+
+[SourceDisksFiles]
+be2nd62.sys  = 1,,
+bepnic.dll  = 1,,
+bepnic.rtf  = 1,,
+
+
+
+
+
+;-----------------------------------------------------------------------------
+; DestinationDirs
+;
+[DestinationDirs]
+be2net.CopyFiles = 12
+be2net.CopyFiles.DLL = 11 ; %windir%\System32
+be2net.CopyFiles.HELP = 10 ; %windir%
+
+
+; Delete the old Ndi/Params reg key during upgrade.
+[be2net.delreg]
+HKR, Ndi\Params
+HKR, SeParams
+HKR, SeErrors
+
+;-----------------------------------------------------------------------------
+; parameters automatically added to the "Advanced" property page in device mgr
+;
+[be2net.common_params]
+
+; Ethernet Parameters ----------------------------------------------
+
+
+
+
+HKR, SeParams\NetworkAddress,    ParamDesc, 0, "%LocallyAdministeredAddress%"
+HKR, SeParams\NetworkAddress,    Default, 0, ""
+HKR, SeParams\NetworkAddress,    type, 0, "edit"
+HKR, SeParams\NetworkAddress,    LimitText, 0, "12"
+HKR, SeParams\NetworkAddress,    UpperCase, 0, "1"
+HKR, SeParams\NetworkAddress,    optional, 0, "1"
+
+HKR, SeParams\NetworkAddress,    UniqueParamDesc, 0, "%LocallyAdministeredAddress%"
+HKR, SeParams\NetworkAddress,    type, 0, "mac"
+HKR, SeParams\NetworkAddress,    Path, 0, "%Configuration%"
+
+
+HKR, SeParams\*JumboPacket,    ParamDesc,,    "%JumboPacket%"
+HKR, SeParams\*JumboPacket,    Type,,        "enum"
+HKR, SeParams\*JumboPacket\enum,1514,,     "%1514%"
+HKR, SeParams\*JumboPacket\enum,4088,,     "%4088%"
+HKR, SeParams\*JumboPacket\enum,8222,,     "%8222%"
+HKR, SeParams\*JumboPacket\enum,9014,,        "%9014%"
+HKR, SeParams\*JumboPacket,    Default,,    "%1514%"
+
+HKR, SeParams\*JumboPacket,    UniqueParamDesc,,    "%JumboPacket%"
+HKR, SeParams\*JumboPacket,    Path,,        "%Configuration%"
+HKR,      ,*JumboPacket, 0x00000002,1514 ; default value
+
+
+HKR, SeParams\VlanId,    ParamDesc,0,    "%Vlan%"
+HKR, SeParams\VlanId,    default,0,    ""
+HKR, SeParams\VlanId,    type,0,    "long"
+HKR, SeParams\VlanId,    min,0,    "1"
+HKR, SeParams\VlanId,    max,0,    "4094"
+HKR, SeParams\VlanId,    step,0,    "1"
+HKR, SeParams\VlanId,    base,0,    "10"
+HKR, SeParams\VlanId, optional, 0, "1"
+
+HKR, SeParams\VlanId, UniqueParamDesc,0,    "%Vlan%"
+HKR, SeParams\VlanId, Path,      0, "%Configuration%"
+
+
+HKR, SeParams\*LsoV1IPv4,    ParamDesc,,    "%LSO%"
+HKR, SeParams\*LsoV1IPv4,    Type,,        "enum"
+HKR, SeParams\*LsoV1IPv4\enum,1,,    "%Enable%"
+HKR, SeParams\*LsoV1IPv4\enum,0,,    "%Disable%"
+HKR, SeParams\*LsoV1IPv4,    Default,,    "1"
+
+HKR, SeParams\*LsoV1IPv4,   Path,,       "%ProtocolOffload4%"
+HKR, SeParams\*LsoV1IPv4,   UniqueParamDesc,, "%Unique_LSO%"
+HKR, ,*LsoV1IPv4,   0x00000002,   1 ; default value
+
+
+HKR, SeParams\*IPChecksumOffloadIPv4,    ParamDesc,,    "%IPChecksumOffload%"
+HKR, SeParams\*IPChecksumOffloadIPv4,    Type,,    "enum"
+HKR, SeParams\*IPChecksumOffloadIPv4\enum,0,,    "%Disable%"
+HKR, SeParams\*IPChecksumOffloadIPv4\enum,1,,    "%TX%"
+HKR, SeParams\*IPChecksumOffloadIPv4\enum,2,,    "%RX%"
+HKR, SeParams\*IPChecksumOffloadIPv4\enum,3,,    "%RXandTX%"
+HKR, SeParams\*IPChecksumOffloadIPv4,    Default,,    "3"
+
+HKR, SeParams\*IPChecksumOffloadIPv4,   Path,, "%Checksum4%"
+HKR, SeParams\*IPChecksumOffloadIPv4,   UniqueParamDesc,, "%Unique_IPChecksumOffload%"
+HKR,      ,*IPChecksumOffloadIPv4,  0x00000002, 3 ; default DWORD value
+
+
+HKR, SeParams\*TCPChecksumOffloadIPv4,    ParamDesc,,    "%TCPChecksumOffload%"
+HKR, SeParams\*TCPChecksumOffloadIPv4,    Type,,    "enum"
+HKR, SeParams\*TCPChecksumOffloadIPv4\enum,0,,    "%Disable%"
+HKR, SeParams\*TCPChecksumOffloadIPv4\enum,1,,    "%TX%"
+HKR, SeParams\*TCPChecksumOffloadIPv4\enum,2,,    "%RX%"
+HKR, SeParams\*TCPChecksumOffloadIPv4\enum,3,,    "%RXandTX%"
+HKR, SeParams\*TCPChecksumOffloadIPv4,    Default,,    "3"
+
+HKR, SeParams\*TCPChecksumOffloadIPv4,   Path,, "%Checksum4%"
+HKR, SeParams\*TCPChecksumOffloadIPv4,   UniqueParamDesc,, "%Unique_TCPChecksumOffload%"
+HKR,      ,*TCPChecksumOffloadIPv4,  0x00000002, 3 ; default DWORD value
+
+
+HKR, SeParams\*UDPChecksumOffloadIPv4,    ParamDesc,,    "%UDPChecksumOffload%"
+HKR, SeParams\*UDPChecksumOffloadIPv4,    Type,,    "enum"
+HKR, SeParams\*UDPChecksumOffloadIPv4\enum,0,,    "%Disable%"
+HKR, SeParams\*UDPChecksumOffloadIPv4\enum,1,,    "%TX%"
+HKR, SeParams\*UDPChecksumOffloadIPv4\enum,2,,    "%RX%"
+HKR, SeParams\*UDPChecksumOffloadIPv4\enum,3,,    "%RXandTX%"
+HKR, SeParams\*UDPChecksumOffloadIPv4,    Default,,    "3"
+
+HKR, SeParams\*UDPChecksumOffloadIPv4,   Path,, "%Checksum4%"
+HKR, SeParams\*UDPChecksumOffloadIPv4,   UniqueParamDesc,, "%Unique_UDPChecksumOffload%"
+HKR,       ,*UDPChecksumOffloadIPv4,  0x00000002, 3 ; default DWORD value
+
+
+HKR, SeParams\InterruptModerationLevel, ParamDesc, 0, "%InterruptModeration%"
+HKR, SeParams\InterruptModerationLevel,    Type,,        "enum"
+HKR, SeParams\InterruptModerationLevel\enum, 0,,      "%IntModNone%"
+HKR, SeParams\InterruptModerationLevel\enum, 2,,      "%IntModFixed%"
+HKR, SeParams\InterruptModerationLevel\enum, 3,,      "%IntModMinimal%"
+HKR, SeParams\InterruptModerationLevel\enum, 4,,      "%IntModDefault%"
+HKR, SeParams\InterruptModerationLevel\enum, 5,,      "%IntModAggression%"
+HKR, SeParams\InterruptModerationLevel\enum, 6,,      "%IntModExtreme%"
+HKR, SeParams\InterruptModerationLevel\enum, 7,,      "%IntModRidiculous%"
+HKR, SeParams\InterruptModerationLevel,    Default,,      "4"
+
+HKR, SeParams\InterruptModerationLevel, UniqueParamDesc, 0, "%InterruptModeration%"
+HKR, SeParams\InterruptModerationLevel, Path,      0, "%Performance%"
+HKR,      ,InterruptModerationLevel,0x00000002,4 ; default DWORD value
+
+
+HKR, SeParams\*ReceiveBuffers, ParamDesc,, "%ReceiveBuffers%"
+HKR, SeParams\*ReceiveBuffers, default,,  "896"
+HKR, SeParams\*ReceiveBuffers, min,,      "64"
+HKR, SeParams\*ReceiveBuffers, max,,      "16384"
+HKR, SeParams\*ReceiveBuffers, step,,     "1"
+HKR, SeParams\*ReceiveBuffers, base,,     "10"
+HKR, SeParams\*ReceiveBuffers, type,,     "dword"
+
+HKR, SeParams\*ReceiveBuffers, UniqueParamDesc,, "%ReceiveBuffers%"
+HKR, SeParams\*ReceiveBuffers, Path,      0, "%Performance%"
+HKR,      ,*ReceiveBuffers,0x00000002,896 ; default DWORD value
+
+
+HKR, SeParams\*TransmitBuffers, ParamDesc,, "%TransmitBuffers%"
+HKR, SeParams\*TransmitBuffers, default,,  "256"
+HKR, SeParams\*TransmitBuffers, min,,      "64"
+HKR, SeParams\*TransmitBuffers, max,,      "256"
+HKR, SeParams\*TransmitBuffers, step,,     "1"
+HKR, SeParams\*TransmitBuffers, base,,     "10"
+HKR, SeParams\*TransmitBuffers, type,,     "dword"
+
+HKR, SeParams\*TransmitBuffers, UniqueParamDesc,, "%TransmitBuffers%"
+HKR, SeParams\*TransmitBuffers, Path,      0, "%Performance%"
+HKR,      ,*TransmitBuffers,0x00000002,256 ; default DWORD value
+
+
+
+HKR, SeParams\ClassOfServiceMode, ParamDesc,, "%ClassOfServiceMode%"
+HKR, SeParams\ClassOfServiceMode, default,,     "1"
+HKR, SeParams\ClassOfServiceMode\enum, 1,,      "%CosDcbxPriority%"
+HKR, SeParams\ClassOfServiceMode\enum, 2,,      "%CosNonStorage%"
+HKR, SeParams\ClassOfServiceMode\enum, 3,,      "%CosUser%"
+HKR, SeParams\ClassOfServiceMode\enum, 4,,      "%CosDisabled%"
+HKR, SeParams\ClassOfServiceMode, type,,        "enum"
+
+HKR, SeParams\ClassOfServiceMode, UniqueParamDesc,, "%ClassOfServiceMode%"
+HKR, SeParams\ClassOfServiceMode, Path,      0, "%Configuration%"
+HKR,      ,ClassOfServiceMode,0x00000002,1  ; default DWORD value
+
+
+
+;---------------------------------------------------------
+; NDIS 6.x specific parameters
+;---------------------------------------------------------
+
+HKR, SeParams\RxCpuPolicy,	ParamDesc,,	"%RxCpu%"
+HKR, SeParams\RxCpuPolicy,	Type,,		"long"
+HKR, SeParams\RxCpuPolicy,	Default,,	""
+HKR, SeParams\RxCpuPolicy, Min,, "0"
+HKR, SeParams\RxCpuPolicy, Max,, "65535"
+HKR, SeParams\RxCpuPolicy, optional,, "1"
+
+HKR, SeParams\RxCpuPolicy,	UniqueParamDesc,,	"%RxCpu%"
+HKR, SeParams\RxCpuPolicy, Path,,"%PerformanceCpu%"
+
+
+
+HKR, SeParams\TxCpuPolicy,	ParamDesc,,	"%TxCpu%"
+HKR, SeParams\TxCpuPolicy,	Type,,		"long"
+HKR, SeParams\TxCpuPolicy,	Default,,	""
+HKR, SeParams\TxCpuPolicy, Min,, "0"
+HKR, SeParams\TxCpuPolicy, Max,, "65535"
+HKR, SeParams\TxCpuPolicy, optional,, "1"
+
+HKR, SeParams\TxCpuPolicy,	UniqueParamDesc,,	"%TxCpu%"
+HKR, SeParams\TxCpuPolicy, Path,,"%PerformanceCpu%"
+
+
+HKR, SeParams\*NumaNodeId,	ParamDesc,,	"%NumaNode%"
+HKR, SeParams\*NumaNodeId,	Type,,		"long"
+HKR, SeParams\*NumaNodeId,	Default,,	""
+HKR, SeParams\*NumaNodeId, Min,, "0"
+HKR, SeParams\*NumaNodeId, Max,, "65535"
+HKR, SeParams\*NumaNodeId, optional,, "1"
+
+HKR, SeParams\*NumaNodeId,	UniqueParamDesc,,	"%NumaNode%"
+HKR, SeParams\*NumaNodeId, Path,,"%PerformanceCpu%"
+
+
+
+
+HKR, SeParams\*LsoV2IPv4,	ParamDesc,,	"%LSOV2IPv4%"
+HKR, SeParams\*LsoV2IPv4,	Type,,		"enum"
+HKR, SeParams\*LsoV2IPv4\enum,1,,		"%Enable%"
+HKR, SeParams\*LsoV2IPv4\enum,0,,		"%Disable%"
+HKR, SeParams\*LsoV2IPv4,	Default,,	"1"
+
+HKR, SeParams\*LsoV2IPv4,   Path,,       "%ProtocolOffload4%"
+HKR, SeParams\*LsoV2IPv4,   UniqueParamDesc,, "%Unique_LSOV2IPv4%"
+HKR,      ,*LsoV2IPv4,   0x00000002,   1 ; default DWORD value
+
+
+HKR, SeParams\*LsoV2IPv6,	ParamDesc,,	"%LSOV2IPv6%"
+HKR, SeParams\*LsoV2IPv6,	Type,,		"enum"
+HKR, SeParams\*LsoV2IPv6\enum,1,,		"%Enable%"
+HKR, SeParams\*LsoV2IPv6\enum,0,,		"%Disable%"
+HKR, SeParams\*LsoV2IPv6,	Default,,	"1"
+
+HKR, SeParams\*LsoV2IPv6,   Path,,       "%ProtocolOffload6%"
+HKR, SeParams\*LsoV2IPv6,   UniqueParamDesc,, "%Unique_LSOV2IPv6%"
+HKR,      ,*LsoV2IPv6,   0x00000002,   1 ; default DWORD value
+
+
+HKR, SeParams\*TCPChecksumOffloadIPv6,	ParamDesc,,	"%TCPChecksumOffloadV6%"
+HKR, SeParams\*TCPChecksumOffloadIPv6,	Type,,		"enum"
+HKR, SeParams\*TCPChecksumOffloadIPv6\enum,0,,		"%Disable%"
+HKR, SeParams\*TCPChecksumOffloadIPv6\enum,1,,		"%TX%"
+HKR, SeParams\*TCPChecksumOffloadIPv6\enum,2,,		"%RX%"
+HKR, SeParams\*TCPChecksumOffloadIPv6\enum,3,,		"%RXandTX%"
+HKR, SeParams\*TCPChecksumOffloadIPv6,	Default,,	"3"
+
+HKR, SeParams\*TCPChecksumOffloadIPv6,   Path,, "%Checksum6%"
+HKR, SeParams\*TCPChecksumOffloadIPv6,   UniqueParamDesc,, "%Unique_TCPChecksumOffloadV6%"
+HKR,      ,*TCPChecksumOffloadIPv6,  0x00000002, 3 ; default DWORD value
+
+
+HKR, SeParams\*UDPChecksumOffloadIPv6,	ParamDesc,,	"%UDPChecksumOffloadV6%"
+HKR, SeParams\*UDPChecksumOffloadIPv6,	Type,,		"enum"
+HKR, SeParams\*UDPChecksumOffloadIPv6\enum,0,,		"%Disable%"
+HKR, SeParams\*UDPChecksumOffloadIPv6\enum,1,,		"%TX%"
+HKR, SeParams\*UDPChecksumOffloadIPv6\enum,2,,		"%RX%"
+HKR, SeParams\*UDPChecksumOffloadIPv6\enum,3,,		"%RXandTX%"
+HKR, SeParams\*UDPChecksumOffloadIPv6,	Default,,	"3"
+
+HKR, SeParams\*UDPChecksumOffloadIPv6,   Path,, "%Checksum6%"
+HKR, SeParams\*UDPChecksumOffloadIPv6,   UniqueParamDesc,, "%Unique_UDPChecksumOffloadV6%"
+HKR,      ,*UDPChecksumOffloadIPv6,  0x00000002, 3 ; default DWORD value
+
+
+
+
+
+
+
+
+
+;---------------------------------------------------------
+; The rich text help file for parameters.
+;---------------------------------------------------------
+HKR, SeParams\HelpFile,             File, 0, "%HelpFile%"
+HKR, SeParams\HelpFile,             Type, 0, "dir" ; // Necessary to hide from display
+
+;---------------------------------------------------------
+; The rich text help file for erro messages with a 
+; a list of all valid messages. The help shown here is only
+; used if the help file is missing.
+;---------------------------------------------------------
+HKR, SeErrors\HelpFile,          File, 0, "%ErrFile%"
+HKR, SeErrors\InvalidMacAddress, Help, 0, "Invalid MAC"
+HKR, SeErrors\Range,             Help, 0, "Invalid parameter value."
+HKR, SeErrors\DuplicateVlanId,   Help, 0, "Duplicate VLAN"
+HKR, SeErrors\InvalidVlanRing,   Help, 0, "Invalid VLAN"
+HKR, SeErrors\InvalidVlanId,     Help, 0, "Invalid VLAN"
+HKR, SeErrors\InvalidPacketSize, Help, 0, "Invalid Parameter"
+HKR, SeErrors\InvalidRxBuffers,  Help, 0, "Invalid Parameter"
+HKR, SeErrors\InvalidDataRate,   Help, 0, "Invalid Parameter"
+HKR, SeErrors\InvalidPacketRate, Help, 0, "Invalid Parameter"
+HKR, SeErrors\Caption,           Help, 0, "Error"
+HKR, SeErrors\NetCfgLocked,      Help, 0, "Network Configuration Locked"
+
+;---------------------------------------------------------
+; Help text for directory nodes in prop page tree.
+;---------------------------------------------------------
+HKR, SeParams\Performance,          Path, 0, "%Performance%"
+HKR, SeParams\PerformanceCpu,       Path, 0, "%PerformanceCpu%"
+HKR, SeParams\PerformanceVmq,       Path, 0, "%PerformanceVmq%"
+HKR, SeParams\Configuration,        Path, 0, "%Configuration%"
+HKR, SeParams\ProtocolOffload,      Path, 0, "%ProtocolOffload%"
+HKR, SeParams\ProtocolOffload4,     Path, 0, "%ProtocolOffload4%"
+HKR, SeParams\Checksum4,            Path, 0, "%Checksum4%"
+HKR, SeParams\ProtocolOffload6,     Path, 0, "%ProtocolOffload6%"
+HKR, SeParams\Checksum6,            Path, 0, "%Checksum6%"
+
+;---------------------------------------------------------
+; Define the type for each directory node.
+;---------------------------------------------------------
+HKR, SeParams\Performance,          Type, 0, "dir"
+HKR, SeParams\PerformanceCpu,       Type, 0, "dir"
+HKR, SeParams\PerformanceVmq,       Type, 0, "dir"
+HKR, SeParams\Configuration,        Type, 0, "dir"
+HKR, SeParams\ProtocolOffload,      Type, 0, "dir"
+HKR, SeParams\ProtocolOffload4,     Type, 0, "dir"
+HKR, SeParams\Checksum4,            Type, 0, "dir"
+HKR, SeParams\ProtocolOffload6,     Type, 0, "dir"
+HKR, SeParams\Checksum6,            Type, 0, "dir"
+
+
+
+
+[be2net.wol_params]
+HKR, SeParams\WakeOnLan, ParamDesc,, "%WakeOnLan%"
+HKR, SeParams\WakeOnLan,	Type,,		"enum"
+HKR, SeParams\WakeOnLan\enum,0,,		"%WakeOnLanDisable%"
+HKR, SeParams\WakeOnLan\enum,1,,		"%WakeOnLanEnable%"
+HKR, SeParams\WakeOnLan,	Default,,	"1"
+
+HKR,      ,*WakeOnPattern,  0x00000002, 1 ; Default DWORD value
+HKR,      ,*WakeOnMagicPacket,  0x00000002, 1 ; Default DWORD value
+
+
+HKR, SeParams\WakeOnLan, UniqueParamDesc,, "%WakeOnLan%"
+HKR, SeParams\WakeOnLan, Path, 0, "%Configuration%"
+HKR,      ,WakeOnLan,  0x00000002, 1 ; Default DWORD value
+
+
+[be2net.rsc_params]
+
+HKR, SeParams\RSCIPv4, ParamDesc,, "%RscIpv4%"
+HKR, SeParams\RSCIPv4,     Type,,  "enum"
+HKR, SeParams\RSCIPv4\enum,0,,     "%Disable%"
+HKR, SeParams\RSCIPv4\enum,1,,     "%Enable%"
+HKR, SeParams\RSCIPv4,    Default,,"0"
+
+HKR, SeParams\RSCIPv4,   Path,,       "%ProtocolOffload4%"
+HKR, SeParams\RSCIPv4,   UniqueParamDesc,, "%Unique_RscIpv4%"
+HKR,      ,RSCIPv4,   0x00000002,   0 ; default DWORD value
+
+
+HKR, SeParams\RSCIPv6, ParamDesc,, "%RscIpv6%"
+HKR, SeParams\RSCIPv6,     Type,,  "enum"
+HKR, SeParams\RSCIPv6\enum,0,,     "%Disable%"
+HKR, SeParams\RSCIPv6\enum,1,,     "%Enable%"
+HKR, SeParams\RSCIPv6,    Default,,"0"
+
+HKR, SeParams\RSCIPv6,   Path,,       "%ProtocolOffload6%"
+HKR, SeParams\RSCIPv6,   UniqueParamDesc,, "%Unique_RscIpv6%"
+HKR,      ,RSCIPv6,   0x00000002,   0 ; default DWORD value
+
+
+
+[be2net.ets_mode]
+
+HKR, SeParams\ETS, ParamDesc,, "%EtsMode%"
+HKR, SeParams\ETS,	Type,,		"enum"
+HKR, SeParams\ETS\enum,0,,		"%EtsModeDisable%"
+HKR, SeParams\ETS\enum,1,,		"%EtsModeEnable%"
+HKR, SeParams\ETS,	Default,,	"0"
+
+HKR, SeParams\ETS, UniqueParamDesc,, "%EtsMode%"
+HKR, SeParams\ETS,   Path,, "%Configuration%"
+HKR,      ,ETS,    0x00000002,0 ; default DWORD value
+
+
+
+[be2net.toe_disabled]
+HKR, SeParams\*TCPConnectionOffloadIPv4,      Default,   0, "0"
+HKR,      ,*TCPConnectionOffloadIPv4,   0x00000002,0 ; default DWORD value
+
+[be2net.toe_optional]
+HKR, SeParams\*TCPConnectionOffloadIPv4,      Default,   0, "0"
+HKR,      ,*TCPConnectionOffloadIPv4,   0x00000002,0 ; default DWORD value
+
+[be2net.toe_params]
+HKR, SeParams\ToeOptLevel, ParamDesc,, "%ToeOptLevel%"
+HKR, SeParams\ToeOptLevel,	Type,,		"enum"
+HKR, SeParams\ToeOptLevel\enum,0,,		"%ToeOptThroughput%"
+HKR, SeParams\ToeOptLevel\enum,2,,		"%ToeOptLatency%"
+HKR, SeParams\ToeOptLevel,	Default,,	"0"
+
+HKR, SeParams\ToeOptLevel, UniqueParamDesc,, "%ToeOptLevel%"
+HKR, SeParams\ToeOptLevel, Path,      0, "%Performance%"
+HKR,      ,ToeOptLevel,  0x00000002, 0 ; Default DWORD value
+
+
+HKR, SeParams\*TCPConnectionOffloadIPv4,      ParamDesc, 0, "%TCPOffload%"
+HKR, SeParams\*TCPConnectionOffloadIPv4,      Type,      0, "enum"
+HKR, SeParams\*TCPConnectionOffloadIPv4\enum, 0,         0, "%Disable%"
+HKR, SeParams\*TCPConnectionOffloadIPv4\enum, 1,         0, "%Enable%"
+
+HKR, SeParams\*TCPConnectionOffloadIPv4,   Path,, "%ProtocolOffload4%"
+HKR, SeParams\*TCPConnectionOffloadIPv4,   UniqueParamDesc,, "%Unique_TCPOffload%"
+
+
+
+
+[be2net.rss_params]
+HKR, SeParams\*RSS, ParamDesc,, "%RSS%"
+HKR, SeParams\*RSS,	Type,,		"enum"
+HKR, SeParams\*RSS\enum,0,,		"%Disable%"
+HKR, SeParams\*RSS\enum,1,,		"%Enable%"
+HKR, SeParams\*RSS,	Default,,	"1"
+
+HKR, SeParams\*RSS, UniqueParamDesc,, "%RSS%"
+HKR, SeParams\*RSS,   Path,, "%Performance%"
+HKR,      ,*RSS,    0x00000002,1 ; default DWORD value
+
+
+
+[be2net.rss_16queue]
+HKR, SeParams\*NumRssQueues ,  ParamDesc,,     "%NumRssQueues%"
+HKR, SeParams\*NumRssQueues ,  Type,,          "long"
+HKR, SeParams\*NumRssQueues ,  Default,,       "16"
+HKR, SeParams\*NumRssQueues , Min,, "1"
+HKR, SeParams\*NumRssQueues , Max,, "16"
+
+HKR, SeParams\*NumRssQueues, UniqueParamDesc,, "%NumRssQueues%"
+HKR, SeParams\*NumRssQueues, Path,,"%Performance%"
+HKR,      ,*NumRssQueues,    0x00000002,16 ; default DWORD value
+
+
+HKR, SeParams\*RssBaseProcNumber,	ParamDesc,,	"%RssBaseCpu%"
+HKR, SeParams\*RssBaseProcNumber,	Type,,		"long"
+HKR, SeParams\*RssBaseProcNumber,	Default,,	""
+HKR, SeParams\*RssBaseProcNumber, Min,, "0"
+HKR, SeParams\*RssBaseProcNumber, Max,, "63"
+HKR, SeParams\*RssBaseProcNumber, optional,, "1"
+
+HKR, SeParams\*RssBaseProcNumber, UniqueParamDesc,, "%RssBaseCpu%"
+HKR, SeParams\*RssBaseProcNumber, Path,,"%Performance%"
+
+
+
+
+
+
+[be2net.fc_params]
+HKR, SeParams\*FlowControl,	ParamDesc,,	"%FlowControl%"
+HKR, SeParams\*FlowControl,	Type,,		"enum"
+HKR, SeParams\*FlowControl\enum,0,,		"%FCDisable%"
+HKR, SeParams\*FlowControl\enum,1,,		"%TxEnableRxDisable%"
+HKR, SeParams\*FlowControl\enum,2,,		"%RxEnableTxDisable%"
+HKR, SeParams\*FlowControl\enum,3,,		"%RXandTX%"
+HKR, SeParams\*FlowControl,	Default,,	"3"
+
+HKR, SeParams\*FlowControl, UniqueParamDesc,,	"%FlowControl%"
+HKR, SeParams\*FlowControl, Path,,      "%Performance%"
+HKR,      ,*FlowControl, 0x00000002,3 ; default DWORD value
+
+
+
+[be2net.vmq_params]
+
+HKR, SeParams\*VMQ, ParamDesc,, "%VMQ%"
+HKR, SeParams\*VMQ,     Type,,     "enum"
+HKR, SeParams\*VMQ\enum,0,,    "%Disable%"
+HKR, SeParams\*VMQ\enum,1,,    "%Enable%"
+HKR, SeParams\*VMQ,    Default,,    "0"
+
+HKR, SeParams\*VMQ, UniqueParamDesc,, "%VMQ%"
+HKR, SeParams\*VMQ,   Path,, "%PerformanceVmq%"
+HKR,      ,*VMQ,    0x00000002,0 ; default DWORD value
+
+
+HKR, SeParams\*VMQLookaheadSplit,      ParamDesc, 0, "%VmqLookaheadSplit%"
+HKR, SeParams\*VMQLookaheadSplit,      Type,      0, "enum"
+HKR, SeParams\*VMQLookaheadSplit\enum, 0,         0, "%Disable%"
+HKR, SeParams\*VMQLookaheadSplit\enum, 1,         0, "%Enable%"
+HKR, SeParams\*VMQLookaheadSplit,    Default,,    "1"
+
+HKR, SeParams\*VMQLookaheadSplit,   Path,, "%PerformanceVmq%"
+HKR, SeParams\*VMQLookaheadSplit,   UniqueParamDesc,, "%VmqLookaheadSplit%"
+HKR,      ,*VMQLookaheadSplit,    0x00000002,1 ; default DWORD value
+
+
+HKR, SeParams\VMQTransmit,      ParamDesc, 0, "%VmqTransmit%"
+HKR, SeParams\VMQTransmit,      Type,      0, "enum"
+HKR, SeParams\VMQTransmit\enum, 0,         0, "%Disable%"
+HKR, SeParams\VMQTransmit\enum, 1,         0, "%Enable%"
+HKR, SeParams\VMQTransmit,    Default,,    "1"
+
+HKR, SeParams\VMQTransmit,   Path,, "%PerformanceVmq%"
+HKR, SeParams\VMQTransmit,   UniqueParamDesc,, "%VmqTransmit%"
+HKR,      ,VMQTransmit,    0x00000002,1 ; default DWORD value
+
+
+
+
+;-----------------------------------------------------------------------------
+; Ndi\Params\<Microsoft registry keys>
+;-----------------------------------------------------------------------------
+[msf.params.ndi.reg]
+HKR,Ndi\Params\*FlowControl,ParamDesc,,"%FlowControlDesc%"
+HKR,Ndi\Params\*FlowControl,Type,,"enum"
+HKR,Ndi\Params\*FlowControl\enum,0,,"%Disable%"
+HKR,Ndi\Params\*FlowControl\enum,1,,"%TX%"
+HKR,Ndi\Params\*FlowControl\enum,2,,"%RX%"
+HKR,Ndi\Params\*FlowControl\enum,3,,"%RXandTX%"
+HKR,Ndi\Params\*FlowControl,Default,,"3"
+HKR,Ndi\Params\*FlowControl,Optional,,"0"
+
+HKR,Ndi\Params\*IPChecksumOffloadIPv4,ParamDesc,,"%IPChecksumOffloadIPv4Desc%"
+HKR,Ndi\Params\*IPChecksumOffloadIPv4,Type,,"enum"
+HKR,Ndi\Params\*IPChecksumOffloadIPv4\enum,0,,"%Disable%"
+HKR,Ndi\Params\*IPChecksumOffloadIPv4\enum,1,,"%TX%"
+HKR,Ndi\Params\*IPChecksumOffloadIPv4\enum,2,,"%RX%"
+HKR,Ndi\Params\*IPChecksumOffloadIPv4\enum,3,,"%RXandTX%"
+HKR,Ndi\Params\*IPChecksumOffloadIPv4,Default,,"3"
+HKR,Ndi\Params\*IPChecksumOffloadIPv4,Optional,,"0"
+
+HKR,Ndi\Params\*JumboPacket,ParamDesc,,"%JumboPacketDesc%"
+HKR,Ndi\Params\*JumboPacket,Type,,"enum"
+HKR,Ndi\Params\*JumboPacket\enum,1514,,"1514"
+HKR,Ndi\Params\*JumboPacket\enum,4088,,"4088"
+HKR,Ndi\Params\*JumboPacket\enum,8222,,"8222"
+HKR,Ndi\Params\*JumboPacket\enum,9014,,"9014"
+HKR,Ndi\Params\*JumboPacket,Default,,"1514"
+HKR,Ndi\Params\*JumboPacket,Optional,,"0"
+
+HKR,Ndi\Params\*LsoV1IPv4,ParamDesc,,"%LsoV1IPv4Desc%"
+HKR,Ndi\Params\*LsoV1IPv4,Type,,"enum"
+HKR,Ndi\Params\*LsoV1IPv4\enum,1,,"%Enable%"
+HKR,Ndi\Params\*LsoV1IPv4\enum,0,,"%Disable%"
+HKR,Ndi\Params\*LsoV1IPv4,Default,,"1"
+HKR,Ndi\Params\*LsoV1IPv4,Optional,,"0"
+
+HKR,Ndi\Params\NetworkAddress,ParamDesc,,"%NetworkAddressDesc%"
+HKR,Ndi\Params\NetworkAddress,type,,"edit"
+HKR,Ndi\Params\NetworkAddress,LimitText,,"12"
+HKR,Ndi\Params\NetworkAddress,UpperCase,,"1"
+HKR,Ndi\Params\NetworkAddress,Default,,""
+HKR,Ndi\Params\NetworkAddress,Optional,,"1"
+
+HKR,Ndi\Params\*ReceiveBuffers,ParamDesc,,"%ReceiveBuffersDesc%"
+HKR,Ndi\Params\*ReceiveBuffers,Type,,"dword"
+HKR,Ndi\Params\*ReceiveBuffers,Min,,"64"
+HKR,Ndi\Params\*ReceiveBuffers,Max,,"16384"
+HKR,Ndi\Params\*ReceiveBuffers,Step,,"1"
+HKR,Ndi\Params\*ReceiveBuffers,Base,,"10"
+HKR,Ndi\Params\*ReceiveBuffers,Default,,"896"
+HKR,Ndi\Params\*ReceiveBuffers,Optional,,"0"
+
+HKR,Ndi\Params\*RSS,ParamDesc,,"%RSSDesc%"
+HKR,Ndi\Params\*RSS,Type,,"enum"
+HKR,Ndi\Params\*RSS\enum,0,,"%Disable%"
+HKR,Ndi\Params\*RSS\enum,1,,"%Enable%"
+HKR,Ndi\Params\*RSS,Default,,"1"
+HKR,Ndi\Params\*RSS,Optional,,"0"
+
+HKR,Ndi\Params\*TCPChecksumOffloadIPv4,ParamDesc,,"%TCPChecksumOffloadIPv4Desc%"
+HKR,Ndi\Params\*TCPChecksumOffloadIPv4,Type,,"enum"
+HKR,Ndi\Params\*TCPChecksumOffloadIPv4\enum,0,,"%Disable%"
+HKR,Ndi\Params\*TCPChecksumOffloadIPv4\enum,1,,"%TX%"
+HKR,Ndi\Params\*TCPChecksumOffloadIPv4\enum,2,,"%RX%"
+HKR,Ndi\Params\*TCPChecksumOffloadIPv4\enum,3,,"%RXandTX%"
+HKR,Ndi\Params\*TCPChecksumOffloadIPv4,Default,,"3"
+HKR,Ndi\Params\*TCPChecksumOffloadIPv4,Optional,,"0"
+
+HKR,Ndi\Params\*TCPConnectionOffloadIPv4,ParamDesc,,"%TCPConnectionOffloadIPv4Desc%"
+HKR,Ndi\Params\*TCPConnectionOffloadIPv4,Type,,"enum"
+HKR,Ndi\Params\*TCPConnectionOffloadIPv4\enum,0,,"%Disable%"
+HKR,Ndi\Params\*TCPConnectionOffloadIPv4\enum,1,,"%Enable%"
+HKR,Ndi\Params\*TCPConnectionOffloadIPv4,Default,,"0"
+HKR,Ndi\Params\*TCPConnectionOffloadIPv4,Optional,,"0"
+
+HKR,Ndi\Params\*TransmitBuffers,ParamDesc,,"%TransmitBuffersDesc%"
+HKR,Ndi\Params\*TransmitBuffers,Type,,"dword"
+HKR,Ndi\Params\*TransmitBuffers,Min,,"64"
+HKR,Ndi\Params\*TransmitBuffers,Max,,"256"
+HKR,Ndi\Params\*TransmitBuffers,Step,,"1"
+HKR,Ndi\Params\*TransmitBuffers,Base,,"10"
+HKR,Ndi\Params\*TransmitBuffers,Default,,"256"
+HKR,Ndi\Params\*TransmitBuffers,Optional,,"0"
+
+HKR,Ndi\Params\*UDPChecksumOffloadIPv4,ParamDesc,,"%UDPChecksumOffloadIPv4Desc%"
+HKR,Ndi\Params\*UDPChecksumOffloadIPv4,Type,,"enum"
+HKR,Ndi\Params\*UDPChecksumOffloadIPv4\enum,0,,"%Disable%"
+HKR,Ndi\Params\*UDPChecksumOffloadIPv4\enum,1,,"%TX%"
+HKR,Ndi\Params\*UDPChecksumOffloadIPv4\enum,2,,"%RX%"
+HKR,Ndi\Params\*UDPChecksumOffloadIPv4\enum,3,,"%RXandTX%"
+HKR,Ndi\Params\*UDPChecksumOffloadIPv4,Default,,"3"
+HKR,Ndi\Params\*UDPChecksumOffloadIPv4,Optional,,"0"
+
+
+
+HKR,,*WakeOnMagicPacket,0x00000002,1
+HKR,,*WakeOnPattern,0x00000002,1
+
+
+
+
+HKR,Ndi\Params\*LsoV2IPv4,ParamDesc,,"%LsoV2IPv4Desc%"
+HKR,Ndi\Params\*LsoV2IPv4,Type,,"enum"
+HKR,Ndi\Params\*LsoV2IPv4\enum,1,,"%Enable%"
+HKR,Ndi\Params\*LsoV2IPv4\enum,0,,"%Disable%"
+HKR,Ndi\Params\*LsoV2IPv4,Default,,"1"
+HKR,Ndi\Params\*LsoV2IPv4,Optional,,"0"
+
+HKR,Ndi\Params\*LsoV2IPv6,ParamDesc,,"%LsoV2IPv6Desc%"
+HKR,Ndi\Params\*LsoV2IPv6,Type,,"enum"
+HKR,Ndi\Params\*LsoV2IPv6\enum,1,,"%Enable%"
+HKR,Ndi\Params\*LsoV2IPv6\enum,0,,"%Disable%"
+HKR,Ndi\Params\*LsoV2IPv6,Default,,"1"
+HKR,Ndi\Params\*LsoV2IPv6,Optional,,"0"
+
+HKR,Ndi\Params\*NumaNodeId,ParamDesc,,"%NumaNodeIdDesc%"
+HKR,Ndi\Params\*NumaNodeId,Type,,"long"
+HKR,Ndi\Params\*NumaNodeId,Min,,"0"
+HKR,Ndi\Params\*NumaNodeId,Max,,"65534"
+HKR,Ndi\Params\*NumaNodeId,Default,,"65535"
+HKR,Ndi\Params\*NumaNodeId,Optional,,"1"
+
+HKR,Ndi\Params\*TCPChecksumOffloadIPv6,ParamDesc,,"%TCPChecksumOffloadIPv6Desc%"
+HKR,Ndi\Params\*TCPChecksumOffloadIPv6,Type,,"enum"
+HKR,Ndi\Params\*TCPChecksumOffloadIPv6\enum,0,,"%Disable%"
+HKR,Ndi\Params\*TCPChecksumOffloadIPv6\enum,1,,"%TX%"
+HKR,Ndi\Params\*TCPChecksumOffloadIPv6\enum,2,,"%RX%"
+HKR,Ndi\Params\*TCPChecksumOffloadIPv6\enum,3,,"%RXandTX%"
+HKR,Ndi\Params\*TCPChecksumOffloadIPv6,Default,,"3"
+HKR,Ndi\Params\*TCPChecksumOffloadIPv6,Optional,,"0"
+
+
+
+HKR,Ndi\Params\*UDPChecksumOffloadIPv6,ParamDesc,,"%UDPChecksumOffloadIPv6Desc%"
+HKR,Ndi\Params\*UDPChecksumOffloadIPv6,Type,,"enum"
+HKR,Ndi\Params\*UDPChecksumOffloadIPv6\enum,0,,"%Disable%"
+HKR,Ndi\Params\*UDPChecksumOffloadIPv6\enum,1,,"%TX%"
+HKR,Ndi\Params\*UDPChecksumOffloadIPv6\enum,2,,"%RX%"
+HKR,Ndi\Params\*UDPChecksumOffloadIPv6\enum,3,,"%RXandTX%"
+HKR,Ndi\Params\*UDPChecksumOffloadIPv6,Default,,"3"
+HKR,Ndi\Params\*UDPChecksumOffloadIPv6,Optional,,"0"
+
+
+
+
+HKR,Ndi\Params\*VMQ,ParamDesc,,"%VMQDesc%"
+HKR,Ndi\Params\*VMQ,Type,,"enum"
+HKR,Ndi\Params\*VMQ\enum,0,,"%Disable%"
+HKR,Ndi\Params\*VMQ\enum,1,,"%Enable%"
+HKR,Ndi\Params\*VMQ,Default,,"1"
+HKR,Ndi\Params\*VMQ,Optional,,"0"
+
+HKR,Ndi\Params\*VMQLookaheadSplit,ParamDesc,,"%VMQLookaheadSplitDesc%"
+HKR,Ndi\Params\*VMQLookaheadSplit,Type,,"enum"
+HKR,Ndi\Params\*VMQLookaheadSplit\enum,0,,"%Disable%"
+HKR,Ndi\Params\*VMQLookaheadSplit\enum,1,,"%Enable%"
+HKR,Ndi\Params\*VMQLookaheadSplit,Default,,"1"
+HKR,Ndi\Params\*VMQLookaheadSplit,Optional,,"0"
+HKR,Ndi\Params\*VMQLookaheadSplit,Default,,"1"
+
+
+
+HKR,Ndi\Params\*NumRssQueues,ParamDesc,,"%NumRssQueuesDesc%"
+HKR,Ndi\Params\*NumRssQueues,Type,,"long"
+HKR,Ndi\Params\*NumRssQueues,Min,,"1"
+HKR,Ndi\Params\*NumRssQueues,Max,,"16"
+HKR,Ndi\Params\*NumRssQueues,Default,,"16"
+HKR,Ndi\Params\*NumRssQueues,Optional,,"0"
+
+
+
+HKR,Ndi\Params\*RssBaseProcNumber,ParamDesc,,"%RssBaseProcNumberDesc%"
+HKR,Ndi\Params\*RssBaseProcNumber,Type,,"long"
+HKR,Ndi\Params\*RssBaseProcNumber,Min,,"0"
+HKR,Ndi\Params\*RssBaseProcNumber,Max,,"63"
+HKR,Ndi\Params\*RssBaseProcNumber,Default,,"0"
+HKR,Ndi\Params\*RssBaseProcNumber,Optional,,"1"
+
+
+
+
+;-----------------------------------------------------------------------------
+; Ndi\Params\<Emulex registry keys>
+;-----------------------------------------------------------------------------
+[elx.params.ndi.reg]
+
+HKR,Ndi\Params\ClassOfServiceMode,ParamDesc,,"%ClassOfServiceMode%"
+HKR,Ndi\Params\ClassOfServiceMode,Type,,"enum"
+HKR,Ndi\Params\ClassOfServiceMode\enum,1,,"%CosDcbxPriority%"
+HKR,Ndi\Params\ClassOfServiceMode\enum,2,,"%CosNonStorage%"
+HKR,Ndi\Params\ClassOfServiceMode\enum,3,,"%CosUser%"
+HKR,Ndi\Params\ClassOfServiceMode\enum,4,,"%CosDisabled%"
+HKR,Ndi\Params\ClassOfServiceMode,Default,,"1"
+HKR,Ndi\Params\ClassOfServiceMode,Optional,,"0"
+
+HKR,Ndi\Params\InterruptModerationLevel,ParamDesc,0,"%InterruptModeration%"
+HKR,Ndi\Params\InterruptModerationLevel,Type,,"enum"
+HKR,Ndi\Params\InterruptModerationLevel\enum,0,,"%IntModNone%"
+HKR,Ndi\Params\InterruptModerationLevel\enum,2,,"%IntModFixed%"
+HKR,Ndi\Params\InterruptModerationLevel\enum,3,,"%IntModMinimal%"
+HKR,Ndi\Params\InterruptModerationLevel\enum,4,,"%IntModDefault%"
+HKR,Ndi\Params\InterruptModerationLevel\enum,5,,"%IntModAggression%"
+HKR,Ndi\Params\InterruptModerationLevel\enum,6,,"%IntModExtreme%"
+HKR,Ndi\Params\InterruptModerationLevel\enum,7,,"%IntModRidiculous%"
+HKR,Ndi\Params\InterruptModerationLevel,Default,,"4"
+HKR,Ndi\Params\InterruptModerationLevel,Optional,,"0"
+
+HKR,Ndi\Params\ToeOptLevel,ParamDesc,,"%ToeOptLevel%"
+HKR,Ndi\Params\ToeOptLevel,Type,,"enum"
+HKR,Ndi\Params\ToeOptLevel\enum,0,,"%ToeOptThroughput%"
+HKR,Ndi\Params\ToeOptLevel\enum,2,,"%ToeOptLatency%"
+HKR,Ndi\Params\ToeOptLevel,Default,,"0"
+HKR,Ndi\Params\ToeOptLevel,Optional,,"0"
+
+HKR,Ndi\Params\VlanId,ParamDesc,,"%Vlan%"
+HKR,Ndi\Params\VlanId,Type,,"long"
+HKR,Ndi\Params\VlanId,Min,,"1"
+HKR,Ndi\Params\VlanId,Max,,"4094"
+HKR,Ndi\Params\VlanId,Step,,"1"
+HKR,Ndi\Params\VlanId,Base,,"10"
+HKR,Ndi\Params\VlanId,Default,,""
+HKR,Ndi\Params\VlanId,Optional,,"1"
+
+HKR,Ndi\Params\WakeOnLan,ParamDesc,,"%WakeOnLan%"
+HKR,Ndi\Params\WakeOnLan,Type,,"enum"
+HKR,Ndi\Params\WakeOnLan\enum,0,,"%WakeOnLanDisable%"
+HKR,Ndi\Params\WakeOnLan\enum,1,,"%WakeOnLanEnable%"
+HKR,Ndi\Params\WakeOnLan,Default,,"1"
+HKR,Ndi\Params\WakeOnLan,Optional,,"0"
+
+
+HKR,Ndi\Params\ETS,ParamDesc,,"%EtsMode%"
+HKR,Ndi\Params\ETS,Type,,"enum"
+HKR,Ndi\Params\ETS\enum,0,,"%EtsModeDisable%"
+HKR,Ndi\Params\ETS\enum,1,,"%EtsModeEnable%"
+HKR,Ndi\Params\ETS,Default,,"0"
+HKR,Ndi\Params\ETS,Optional,,"0"
+
+
+HKR,Ndi\Params\RSCIPv4,ParamDesc,,"%RSCIPv4Desc%"
+HKR,Ndi\Params\RSCIPv4,Type,,"enum"
+HKR,Ndi\Params\RSCIPv4\enum,0,,"%Disable%"
+HKR,Ndi\Params\RSCIPv4\enum,1,,"%Enable%"
+HKR,Ndi\Params\RSCIPv4,Default,,"0"
+
+HKR,Ndi\Params\RSCIPv6,ParamDesc,,"%RSCIPv6Desc%"
+HKR,Ndi\Params\RSCIPv6,Type,,"enum"
+HKR,Ndi\Params\RSCIPv6\enum,0,,"%Disable%"
+HKR,Ndi\Params\RSCIPv6\enum,1,,"%Enable%"
+HKR,Ndi\Params\RSCIPv6,Default,,"0"
+
+
+HKR,Ndi\Params\RxCpuPolicy,ParamDesc,,"%RxCpu%"
+HKR,Ndi\Params\RxCpuPolicy,Type,,"long"
+HKR,Ndi\Params\RxCpuPolicy,Min,,"0"
+HKR,Ndi\Params\RxCpuPolicy,Max,,"255"
+HKR,Ndi\Params\RxCpuPolicy,Default,,""
+HKR,Ndi\Params\RxCpuPolicy,Optional,,"1"
+
+HKR,Ndi\Params\TxCpuPolicy,ParamDesc,,"%TxCpu%"
+HKR,Ndi\Params\TxCpuPolicy,Type,,"long"
+HKR,Ndi\Params\TxCpuPolicy,Min,,"0"
+HKR,Ndi\Params\TxCpuPolicy,Max,,"255"
+HKR,Ndi\Params\TxCpuPolicy,Default,,""
+HKR,Ndi\Params\TxCpuPolicy,Optional,,"1"
+
+
+
+HKR,Ndi\Params\VMQTransmit,ParamDesc,,"%VmqTransmit%"
+HKR,Ndi\Params\VMQTransmit,Type,,"enum"
+HKR,Ndi\Params\VMQTransmit\enum,0,,"%Disable%"
+HKR,Ndi\Params\VMQTransmit\enum,1,,"%Enable%"
+HKR,Ndi\Params\VMQTransmit,Default,,"1"
+HKR,Ndi\Params\VMQTransmit,Optional,,"0"
+
+
+;------------------------------------------------------------------------
+
+;-----------------------------------------------------------------------------
+; Localizable Strings
+;-----------------------------------------------------------------------------
+[Strings]
+; Emulex
+PCI\VEN_19A2&DEV_0211.DeviceDesc = "Emulex OneConnect 10Gb NIC (Generic)"
+PCI\VEN_19A2&DEV_0215.DeviceDesc = "Emulex OneConnect 10Gb NIC (Generic)" 
+PCI\VEN_19A2&DEV_0211&SUBSYS_021119A2.DeviceDesc = "Emulex OneConnect 10Gb NIC"
+PCI\VEN_19A2&DEV_0211&SUBSYS_10CE1734.DeviceDesc = "Emulex OneConnect 10Gb NIC"
+PCI\VEN_19A2&DEV_0211&SUBSYS_100019A2.DeviceDesc = "Emulex OneConnect 10Gb NIC/TOE Adapter Port 0"
+PCI\VEN_19A2&DEV_0211&SUBSYS_101019A2.DeviceDesc = "Emulex OneConnect 10Gb CNA NIC/TOE Port 0"
+PCI\VEN_19A2&DEV_0211&SUBSYS_200019A2.DeviceDesc = "Emulex OneConnect 10Gb NIC/TOE Adapter Port 0" 
+PCI\VEN_19A2&DEV_0211&SUBSYS_201019A2.DeviceDesc = "Emulex OneConnect 10Gb CNA NIC/TOE Port 0"     
+PCI\VEN_19A2&DEV_0211&SUBSYS_102019A2.DeviceDesc = "Emulex OneConnect 10Gb NIC/TOE Adapter Port 0"  
+PCI\VEN_19A2&DEV_0211&SUBSYS_103019A2.DeviceDesc = "Emulex OneConnect 10Gb CNA NIC/TOE Port 0"      
+PCI\VEN_19A2&DEV_0215&SUBSYS_021519A2.DeviceDesc = "Emulex OneConnect 10Gb NIC" 
+PCI\VEN_19A2&DEV_0215&SUBSYS_10CE1734.DeviceDesc = "Emulex OneConnect 10Gb NIC"
+PCI\VEN_19A2&DEV_0211&SUBSYS_100119A2.DeviceDesc = "Emulex OneConnect 10Gb NIC/TOE Adapter Port 1" 
+PCI\VEN_19A2&DEV_0211&SUBSYS_101119A2.DeviceDesc = "Emulex OneConnect 10Gb CNA NIC/TOE Port 1"     
+PCI\VEN_19A2&DEV_0211&SUBSYS_200119A2.DeviceDesc = "Emulex OneConnect 10Gb NIC/TOE Adapter Port 1"  
+PCI\VEN_19A2&DEV_0211&SUBSYS_201119A2.DeviceDesc = "Emulex OneConnect 10Gb CNA NIC/TOE Port 1"      
+PCI\VEN_19A2&DEV_0211&SUBSYS_102119A2.DeviceDesc = "Emulex OneConnect 10Gb NIC/TOE Adapter Port 1"  
+PCI\VEN_19A2&DEV_0211&SUBSYS_103119A2.DeviceDesc = "Emulex OneConnect 10Gb CNA NIC/TOE Port 1"      
+
+; Emulex
+PCI\VEN_19A2&DEV_0221.DeviceDesc = "Emulex OneConnect 10Gb NIC (Generic Compatibility)"
+PCI\VEN_19A2&DEV_0221&SUBSYS_022119A2.DeviceDesc = "Emulex OneConnect 10Gb NIC(Compatibility)"
+
+; Emulex
+PCI\VEN_19A2&DEV_0700&SUBSYS_E65810DF.DeviceDesc = "Emulex OneConnect OCm10102-I-SP2, NIC/TOE"
+PCI\VEN_19A2&DEV_0700&SUBSYS_E65610DF.DeviceDesc = "Emulex OneConnect OCm10102-I-SP1, NIC/TOE"
+PCI\VEN_19A2&DEV_0700&SUBSYS_E65410DF.DeviceDesc = "Emulex OneConnect OCm10102-I-HDS, NIC/TOE"
+PCI\VEN_19A2&DEV_0700&SUBSYS_E65210DF.DeviceDesc = "Emulex OneConnect OCm10102-I-M, NIC/TOE"
+PCI\VEN_19A2&DEV_0700&SUBSYS_E65010DF.DeviceDesc = "Emulex OneConnect OCm10102-I-X, NIC/TOE"
+PCI\VEN_19A2&DEV_0700&SUBSYS_E64610DF.DeviceDesc = "Emulex OneConnect OCe10102-I-SP, NIC/TOE"
+PCI\VEN_19A2&DEV_0700&SUBSYS_E64410DF.DeviceDesc = "Emulex OneConnect OCe10101-I-SP, NIC/TOE"
+PCI\VEN_19A2&DEV_0700&SUBSYS_E64210DF.DeviceDesc = "Emulex OneConnect OCe10102-I, NIC/TOE"
+PCI\VEN_19A2&DEV_0700&SUBSYS_E64010DF.DeviceDesc = "Emulex OneConnect OCe10101-I, NIC/TOE"
+PCI\VEN_19A2&DEV_0700&SUBSYS_E63810DF.DeviceDesc = "Emulex OneConnect OCm10102-N-SP2, NIC/TOE"
+PCI\VEN_19A2&DEV_0700&SUBSYS_E63610DF.DeviceDesc = "Emulex OneConnect OCm10102-N-SP1, NIC/TOE"
+PCI\VEN_19A2&DEV_0700&SUBSYS_E63410DF.DeviceDesc = "Emulex OneConnect OCm10102-N-HDS, NIC/TOE"
+PCI\VEN_19A2&DEV_0700&SUBSYS_E63210DF.DeviceDesc = "Emulex OneConnect OCm10102-N-M, NIC/TOE"
+PCI\VEN_19A2&DEV_0700&SUBSYS_E63010DF.DeviceDesc = "Emulex OneConnect OCm10102-N-X, NIC/TOE"
+PCI\VEN_19A2&DEV_0700&SUBSYS_E62610DF.DeviceDesc = "Emulex OneConnect OCe10102-N-SP, NIC/TOE"
+PCI\VEN_19A2&DEV_0700&SUBSYS_E62410DF.DeviceDesc = "Emulex OneConnect OCe10101-N-SP, NIC/TOE"
+PCI\VEN_19A2&DEV_0700&SUBSYS_E62210DF.DeviceDesc = "Emulex OneConnect OCe10102-N, NIC/TOE"
+PCI\VEN_19A2&DEV_0700&SUBSYS_E62010DF.DeviceDesc = "Emulex OneConnect OCe10101-N, NIC/TOE"
+PCI\VEN_19A2&DEV_0700&SUBSYS_E61810DF.DeviceDesc = "Emulex OneConnect OCm10102-F-SP2, NIC/TOE"
+PCI\VEN_19A2&DEV_0700&SUBSYS_E61610DF.DeviceDesc = "Emulex OneConnect OCm10102-F-SP1, NIC/TOE"
+PCI\VEN_19A2&DEV_0700&SUBSYS_E61410DF.DeviceDesc = "Emulex OneConnect OCm10102-F-HDS, NIC/TOE"
+PCI\VEN_19A2&DEV_0700&SUBSYS_E61210DF.DeviceDesc = "Emulex OneConnect OCm10102-F-M, NIC/TOE"
+PCI\VEN_19A2&DEV_0700&SUBSYS_E61010DF.DeviceDesc = "Emulex OneConnect OCm10102-F-X, NIC/TOE"
+PCI\VEN_19A2&DEV_0700&SUBSYS_E60610DF.DeviceDesc = "Emulex OneConnect OCe10102-F-SP, NIC/TOE"
+PCI\VEN_19A2&DEV_0700&SUBSYS_E60410DF.DeviceDesc = "Emulex OneConnect OCe10101-F-SP, NIC/TOE"
+PCI\VEN_19A2&DEV_0700&SUBSYS_E60210DF.DeviceDesc = "Emulex OneConnect OCe10102-F, NIC/TOE"
+PCI\VEN_19A2&DEV_0700&SUBSYS_E60010DF.DeviceDesc = "Emulex OneConnect OCe10101-F, NIC/TOE"
+PCI\VEN_19A2&DEV_0700&SUBSYS_E6AE10DF.DeviceDesc = "Emulex OneConnect OCem10102-I-S, NIC/TOE"
+PCI\VEN_19A2&DEV_0700&SUBSYS_E6A210DF.DeviceDesc = "Emulex OneConnect OCe10102-I-S, NIC/TOE"
+PCI\VEN_19A2&DEV_0700&SUBSYS_E6A010DF.DeviceDesc = "Emulex OneConnect OCe10101-I-S, NIC/TOE"
+PCI\VEN_19A2&DEV_0700&SUBSYS_E69E10DF.DeviceDesc = "Emulex OneConnect OCem10102-N-S, NIC/TOE"
+PCI\VEN_19A2&DEV_0700&SUBSYS_E69210DF.DeviceDesc = "Emulex OneConnect OCe10102-N-S, NIC/TOE"
+PCI\VEN_19A2&DEV_0700&SUBSYS_E69010DF.DeviceDesc = "Emulex OneConnect OCe10101-N-S, NIC/TOE"
+PCI\VEN_19A2&DEV_0700&SUBSYS_E68E10DF.DeviceDesc = "Emulex OneConnect OCem10102-F-S, NIC/TOE"
+PCI\VEN_19A2&DEV_0700&SUBSYS_E68210DF.DeviceDesc = "Emulex OneConnect OCe10102-F-S, NIC/TOE"
+PCI\VEN_19A2&DEV_0700&SUBSYS_E68010DF.DeviceDesc = "Emulex OneConnect OCe10101-F-S, NIC/TOE"
+
+; IBM
+PCI\VEN_19A2&DEV_0700&SUBSYS_E62810DF.DeviceDesc = "Emulex OneConnect OCe10102-N-XI, NIC/TOE"
+PCI\VEN_19A2&DEV_0700&SUBSYS_E62910DF.DeviceDesc = "Emulex OneConnect OCe10102-N-X, NIC/TOE"
+PCI\VEN_19A2&DEV_0700&SUBSYS_117A1734.DeviceDesc = "Emulex OneConnect OCe10101-N-FTS, NIC/TOE" 
+PCI\VEN_19A2&DEV_0700&SUBSYS_117C1734.DeviceDesc = "Emulex OneConnect OCe10102-N-FTS, NIC/TOE" 
+PCI\VEN_19A2&DEV_0700&SUBSYS_117E1734.DeviceDesc = "Emulex OneConnect OCm10102-N-FTS, NIC/TOE" 
+PCI\VEN_19A2&DEV_0700&SUBSYS_E64810DF.DeviceDesc = "Emulex OneConnect OCe10102-I-XI, NIC/TOE" 
+PCI\VEN_19A2&DEV_0700&SUBSYS_E64910DF.DeviceDesc = "Emulex OneConnect OCe10102-I-X, NIC/TOE" 
+PCI\VEN_19A2&DEV_0700&SUBSYS_11801734.DeviceDesc = "Emulex OneConnect OCe10101-I-FTS, NIC/TOE" 
+PCI\VEN_19A2&DEV_0700&SUBSYS_11821734.DeviceDesc = "Emulex OneConnect OCe10102-I-FTS, NIC/TOE" 
+PCI\VEN_19A2&DEV_0700&SUBSYS_11841734.DeviceDesc = "Emulex OneConnect OCm10102-I-FTS, NIC/TOE" 
+PCI\VEN_19A2&DEV_0700&SUBSYS_E60810DF.DeviceDesc = "Emulex OneConnect OCe10102-F-XI, NIC/TOE" 
+PCI\VEN_19A2&DEV_0700&SUBSYS_E60910DF.DeviceDesc = "Emulex OneConnect OCe10102-F-X, NIC/TOE" 
+PCI\VEN_19A2&DEV_0700&SUBSYS_11861734.DeviceDesc = "Emulex OneConnect OCe10101-F-FTS, NIC/TOE" 
+PCI\VEN_19A2&DEV_0700&SUBSYS_11881734.DeviceDesc = "Emulex OneConnect OCe10102-F-FTS, NIC/TOE" 
+PCI\VEN_19A2&DEV_0700&SUBSYS_118A1734.DeviceDesc = "Emulex OneConnect OCm10102-F-FTS, NIC/TOE" 
+PCI\VEN_19A2&DEV_0700&SUBSYS_006E1137.DeviceDesc = "Emulex OneConnect OCm10102-F-C, NIC/TOE"
+PCI\VEN_19A2&DEV_0700&SUBSYS_E65110DF.DeviceDesc = "Emulex OneConnect OCm10102-F-CFFh, NIC/TOE"
+PCI\VEN_19A2&DEV_0700&SUBSYS_E61110DF.DeviceDesc = "Emulex OneConnect OCm10104-NFC-X, NIC/TOE" 
+
+PCI\VEN_19A2&DEV_0710&SUBSYS_E70B10DF.DeviceDesc = "Emulex OneConnect OCl11102-F-X, NIC/TOE"
+PCI\VEN_19A2&DEV_0710&SUBSYS_E70F10DF.DeviceDesc = "Emulex OneConnect OCl11102-F5-X, NIC/TOE"
+PCI\VEN_19A2&DEV_0710&SUBSYS_E71710DF.DeviceDesc = "Emulex OneConnect OCl11102-F6-X, NIC/TOE"
+PCI\VEN_19A2&DEV_0710&SUBSYS_E71910DF.DeviceDesc = "Emulex OneConnect OCl11102-F7-X, NIC/TOE"
+PCI\VEN_19A2&DEV_0710&SUBSYS_E71B10DF.DeviceDesc = "Emulex OneConnect OCm11102-F2-X, NIC/TOE"
+PCI\VEN_19A2&DEV_0710&SUBSYS_E71C10DF.DeviceDesc = "Emulex OneConnect OCm11102-F3-X, NIC/TOE"
+PCI\VEN_19A2&DEV_0710&SUBSYS_E71510DF.DeviceDesc = "Emulex OneConnect OCm11102-F-XL, NIC/TOE"
+PCI\VEN_19A2&DEV_0710&SUBSYS_E71E10DF.DeviceDesc = "Emulex OneConnect OCm11102-F4-X, NIC/TOE"
+PCI\VEN_19A2&DEV_0710&SUBSYS_E71F10DF.DeviceDesc = "Emulex OneConnect OCe11102-F2, NIC/TOE"
+PCI\VEN_19A2&DEV_0710&SUBSYS_E71A10DF.DeviceDesc = "Emulex OneConnect OCe11102-FX-V, NIC/TOE"
+PCI\VEN_19A2&DEV_0710&SUBSYS_E73110DF.DeviceDesc = "Emulex OneConnect OCm11104-N-X, NIC/TOE"
+PCI\VEN_19A2&DEV_0710&SUBSYS_E70C10DF.DeviceDesc = "Emulex OneConnect OCl11104-F2-X, NIC/TOE"
+PCI\VEN_19A2&DEV_0710&SUBSYS_E70D10DF.DeviceDesc = "Emulex OneConnect OCl11102-F3-X, NIC/TOE"
+PCI\VEN_19A2&DEV_0710&SUBSYS_E70E10DF.DeviceDesc = "Emulex OneConnect OCl11102-F4-X, NIC/TOE"
+
+PCI\VEN_19A2&DEV_0710&SUBSYS_E72010DF.DeviceDesc = "Emulex OneConnect OCe11101-N, NIC/TOE"
+PCI\VEN_19A2&DEV_0710&SUBSYS_E72210DF.DeviceDesc = "Emulex OneConnect OCe11102-N, NIC/TOE" 
+PCI\VEN_19A2&DEV_0710&SUBSYS_E72310DF.DeviceDesc = "Emulex OneConnect OCe11102-NT, NIC/TOE"
+PCI\VEN_19A2&DEV_0710&SUBSYS_E72410DF.DeviceDesc = "Emulex OneConnect OCe11101-N-SP, NIC/TOE" 
+PCI\VEN_19A2&DEV_0710&SUBSYS_E72610DF.DeviceDesc = "Emulex OneConnect OCe11102-N-SP, NIC/TOE" 
+PCI\VEN_19A2&DEV_0710&SUBSYS_E73610DF.DeviceDesc = "Emulex OneConnect OCm11102-N-SP1, NIC/TOE" 
+PCI\VEN_19A2&DEV_0710&SUBSYS_E73810DF.DeviceDesc = "Emulex OneConnect OCm11102-N-SP2, NIC/TOE" 
+PCI\VEN_19A2&DEV_0710&SUBSYS_E74010DF.DeviceDesc = "Emulex OneConnect OCe11101-I, NIC/TOE" 
+PCI\VEN_19A2&DEV_0710&SUBSYS_E74210DF.DeviceDesc = "Emulex OneConnect OCe11102-I, NIC/TOE" 
+PCI\VEN_19A2&DEV_0710&SUBSYS_E74310DF.DeviceDesc = "Emulex OneConnect OCe11102-IT, NIC/TOE"
+PCI\VEN_19A2&DEV_0710&SUBSYS_E74410DF.DeviceDesc = "Emulex OneConnect OCe11101-I-SP, NIC/TOE" 
+PCI\VEN_19A2&DEV_0710&SUBSYS_E74610DF.DeviceDesc = "Emulex OneConnect OCe11102-I-SP, NIC/TOE" 
+PCI\VEN_19A2&DEV_0710&SUBSYS_E75610DF.DeviceDesc = "Emulex OneConnect OCm11102-I-SP1, NIC/TOE" 
+PCI\VEN_19A2&DEV_0710&SUBSYS_E75810DF.DeviceDesc = "Emulex OneConnect OCm11102-I-SP2, NIC/TOE" 
+PCI\VEN_19A2&DEV_0710&SUBSYS_E70010DF.DeviceDesc = "Emulex OneConnect OCe11101-F, NIC/TOE" 
+PCI\VEN_19A2&DEV_0710&SUBSYS_E70210DF.DeviceDesc = "Emulex OneConnect OCe11102-F, NIC/TOE" 
+PCI\VEN_19A2&DEV_0710&SUBSYS_E70310DF.DeviceDesc = "Emulex OneConnect OCe11102-FT, NIC/TOE"
+PCI\VEN_19A2&DEV_0710&SUBSYS_E70410DF.DeviceDesc = "Emulex OneConnect OCe11101-F-SP, NIC/TOE" 
+PCI\VEN_19A2&DEV_0710&SUBSYS_E70610DF.DeviceDesc = "Emulex OneConnect OCe11102-F-SP, NIC/TOE" 
+PCI\VEN_19A2&DEV_0710&SUBSYS_E71610DF.DeviceDesc = "Emulex OneConnect OCm11102-F-SP1, NIC/TOE" 
+PCI\VEN_19A2&DEV_0710&SUBSYS_E71810DF.DeviceDesc = "Emulex OneConnect OCm11102-F-SP2, NIC/TOE" 
+PCI\VEN_19A2&DEV_0710&SUBSYS_E75110DF.DeviceDesc = "Emulex OneConnect OCm11102-F-CFFh, NIC/TOE" 
+PCI\VEN_19A2&DEV_0710&SUBSYS_E72810DF.DeviceDesc = "Emulex OneConnect OCe11102-N-XI, NIC/TOE" 
+PCI\VEN_19A2&DEV_0710&SUBSYS_E72910DF.DeviceDesc = "Emulex OneConnect OCe11102-N-X, NIC/TOE" 
+PCI\VEN_19A2&DEV_0710&SUBSYS_E72A10DF.DeviceDesc = "Emulex OneConnect OCe11102-N2-X, NIC/TOE"
+PCI\VEN_19A2&DEV_0710&SUBSYS_E73010DF.DeviceDesc = "Emulex OneConnect OCm11102-N-X, NIC/TOE" 
+PCI\VEN_19A2&DEV_0710&SUBSYS_E71110DF.DeviceDesc = "Emulex OneConnect OCm11104-NFC-X, NIC/TOE" 
+PCI\VEN_19A2&DEV_0710&SUBSYS_03D01014.DeviceDesc = "Emulex OneConnect OCe11102-NM-P, NIC/TOE" 
+PCI\VEN_19A2&DEV_0710&SUBSYS_03D11014.DeviceDesc = "Emulex OneConnect OCe11102-NX-P, NIC/TOE" 
+
+PCI\VEN_19A2&DEV_0710&SUBSYS_E73310DF.DeviceDesc = "Emulex OneConnect OCm11104-N-P, NIC/TOE"
+PCI\VEN_19A2&DEV_0710&SUBSYS_E73510DF.DeviceDesc = "Emulex OneConnect OCm11102-N-XL, NIC/TOE"
+PCI\VEN_19A2&DEV_0710&SUBSYS_E74810DF.DeviceDesc = "Emulex OneConnect OCe11102-I-XI, NIC/TOE" 
+PCI\VEN_19A2&DEV_0710&SUBSYS_E75010DF.DeviceDesc = "Emulex OneConnect OCm11102-I-X, NIC/TOE" 
+PCI\VEN_19A2&DEV_0710&SUBSYS_E70810DF.DeviceDesc = "Emulex OneConnect OCe11102-F-X, NIC/TOE" 
+PCI\VEN_19A2&DEV_0710&SUBSYS_E71010DF.DeviceDesc = "Emulex OneConnect OCm11102-F-X, NIC/TOE" 
+PCI\VEN_19A2&DEV_0710&SUBSYS_E75210DF.DeviceDesc = "Emulex OneConnect OCm11102-I-M, NIC/TOE" 
+PCI\VEN_19A2&DEV_0710&SUBSYS_E71210DF.DeviceDesc = "Emulex OneConnect OCm11102-F-M, NIC/TOE" 
+PCI\VEN_19A2&DEV_0710&SUBSYS_E73410DF.DeviceDesc = "Emulex OneConnect OCm11102-N-HDS, NIC/TOE" 
+PCI\VEN_19A2&DEV_0710&SUBSYS_E75410DF.DeviceDesc = "Emulex OneConnect OCm11102-I-HDS, NIC/TOE" 
+PCI\VEN_19A2&DEV_0710&SUBSYS_E71410DF.DeviceDesc = "Emulex OneConnect OCm11102-F-HDS, NIC/TOE" 
+PCI\VEN_19A2&DEV_0710&SUBSYS_304B1054.DeviceDesc = "Emulex OneConnect OCm11104-F-HI, NIC/TOE"
+
+; Hitachi
+PCI\VEN_19A2&DEV_0710&SUBSYS_30571054.DeviceDesc = "Emulex OneConnect OCm11102-F-HI, NIC/TOE"
+PCI\VEN_19A2&DEV_0710&SUBSYS_30581054.DeviceDesc = "Emulex OneConnect OCm11102-N-HI, NIC/TOE"
+PCI\VEN_19A2&DEV_0710&SUBSYS_304C1054.DeviceDesc = "Emulex OneConnect OCm11104-N-HI, NIC/TOE"
+PCI\VEN_19A2&DEV_0710&SUBSYS_304D1054.DeviceDesc = "Emulex OneConnect OCm11104-N2-HI, NIC/TOE"
+PCI\VEN_19A2&DEV_0710&SUBSYS_30541054.DeviceDesc = "Emulex OneConnect OCm11104-F2-HI, NIC/TOE"
+PCI\VEN_19A2&DEV_0710&SUBSYS_304E1054.DeviceDesc = "Emulex OneConnect OCl11102-F-HI, NIC/TOE"
+PCI\VEN_19A2&DEV_0710&SUBSYS_304F1054.DeviceDesc = "Emulex OneConnect OCl11102-F2-HI, NIC/TOE"
+PCI\VEN_19A2&DEV_0710&SUBSYS_E79010DF.DeviceDesc = "Emulex OneConnect OCe11101-N-S, NIC/TOE" 
+PCI\VEN_19A2&DEV_0710&SUBSYS_E79210DF.DeviceDesc = "Emulex OneConnect OCe11102-N-S, NIC/TOE" 
+PCI\VEN_19A2&DEV_0710&SUBSYS_E79E10DF.DeviceDesc = "Emulex OneConnect OCm11102-N-S, NIC/TOE" 
+PCI\VEN_19A2&DEV_0710&SUBSYS_E7A010DF.DeviceDesc = "Emulex OneConnect OCe11101-I-S, NIC/TOE" 
+PCI\VEN_19A2&DEV_0710&SUBSYS_E7A210DF.DeviceDesc = "Emulex OneConnect OCe11102-I-S, NIC/TOE" 
+PCI\VEN_19A2&DEV_0710&SUBSYS_E7AE10DF.DeviceDesc = "Emulex OneConnect OCm11102-I-S, NIC/TOE" 
+PCI\VEN_19A2&DEV_0710&SUBSYS_E78010DF.DeviceDesc = "Emulex OneConnect OCe11101-F-S, NIC/TOE" 
+PCI\VEN_19A2&DEV_0710&SUBSYS_E78210DF.DeviceDesc = "Emulex OneConnect OCe11102-F-S, NIC/TOE" 
+PCI\VEN_19A2&DEV_0710&SUBSYS_E78E10DF.DeviceDesc = "Emulex OneConnect OCm11102-F-S, NIC/TOE" 
+
+
+
+PCI\VEN_19A2&DEV_0710&SUBSYS_11A01734.DeviceDesc = "Emulex OneConnect OCe11101-I, NIC/TOE" 
+PCI\VEN_19A2&DEV_0710&SUBSYS_11A11734.DeviceDesc = "Emulex OneConnect OCe11102-I, NIC/TOE" 
+PCI\VEN_19A2&DEV_0710&SUBSYS_11A21734.DeviceDesc = "Emulex OneConnect OCm11102-I, NIC/TOE" 
+PCI\VEN_19A2&DEV_0710&SUBSYS_119D1734.DeviceDesc = "Emulex OneConnect OCe11101-F, NIC/TOE" 
+PCI\VEN_19A2&DEV_0710&SUBSYS_119E1734.DeviceDesc = "Emulex OneConnect OCe11102-F, NIC/TOE" 
+PCI\VEN_19A2&DEV_0710&SUBSYS_119F1734.DeviceDesc = "Emulex MC-CNA112E-F 10Gb CNA (Fujitsu)" 
+PCI\VEN_19A2&DEV_0710&SUBSYS_006F1137.DeviceDesc = "Emulex OneConnect OCm11102-F-C, NIC/TOE" 
+PCI\VEN_19A2&DEV_0710&SUBSYS_04091014.DeviceDesc = "Emulex OneConnect OCl11104-NM-P, NIC/TOE"
+PCI\VEN_19A2&DEV_0710&SUBSYS_040A1014.DeviceDesc = "Emulex OneConnect OCl11104-NX-P, NIC/TOE"
+
+; IBM 1G
+PCI\VEN_19A2&DEV_0710&SUBSYS_03D21014.DeviceDesc = "Emulex OneConnect OCl11104-N-P, NIC/TOE"
+PCI\VEN_19A2&DEV_0710&SUBSYS_E70A10DF.DeviceDesc = "Emulex OneConnect OCl11104-F-X, NIC/TOE"
+
+; Foxconn
+PCI\VEN_19A2&DEV_0710&SUBSYS_E72510DF.DeviceDesc = "Emulex OneConnect OCl11104-NX-FOX, NIC/TOE"
+
+; HP Strings
+PCI\VEN_19A2&DEV_0700&SUBSYS_1746103C.DeviceDesc = "HP NC550m Dual Port Flex-10 10Gbe BL-c Adapter"
+PCI\VEN_19A2&DEV_0700&SUBSYS_1747103C.DeviceDesc = "HP NC550SFP Dual Port 10GbE Server Adapter"
+PCI\VEN_19A2&DEV_0700&SUBSYS_174B103C.DeviceDesc = "HP CN1000E Converged Network Adapter"
+PCI\VEN_19A2&DEV_0700&SUBSYS_174A103C.DeviceDesc = "HP NC551m Dual Port FlexFabric 10Gb Network Adapter"
+PCI\VEN_19A2&DEV_0700&SUBSYS_3314103C.DeviceDesc = "HP NC551i Dual Port FlexFabric 10Gb Converged Network Adapter"
+PCI\VEN_19A2&DEV_0700&SUBSYS_1748103C.DeviceDesc = "Emulex OneConnect OCm10102-I-HP, NIC/TOE"
+PCI\VEN_19A2&DEV_0700&SUBSYS_1749103C.DeviceDesc = "Emulex OneConnect OCe10102-I-HP, NIC/TOE"
+PCI\VEN_19A2&DEV_0710&SUBSYS_3340103C.DeviceDesc = "HP NC552SFP Dual Port 10GbE Server Adapter" 
+PCI\VEN_19A2&DEV_0710&SUBSYS_3341103C.DeviceDesc = "HP NC552m Dual Port Flex-10 10Gbe BL-c Adapter" 
+PCI\VEN_19A2&DEV_0710&SUBSYS_17A6103C.DeviceDesc = "HP Integrity_NC552SFP 2P 10GbE Adapter"
+PCI\VEN_19A2&DEV_0710&SUBSYS_17A3103C.DeviceDesc = "HP Integrity_CN1100E PCIe 2-port CNA"
+PCI\VEN_19A2&DEV_0710&SUBSYS_3342103C.DeviceDesc = "Emulex OneConnect OCe11102-I-HP, NIC/TOE" 
+PCI\VEN_19A2&DEV_0710&SUBSYS_3343103C.DeviceDesc = "Emulex OneConnect OCm11102-I-HP, NIC/TOE" 
+PCI\VEN_19A2&DEV_0710&SUBSYS_3344103C.DeviceDesc = "HP CN1100E Converged Network Adapter" 
+PCI\VEN_19A2&DEV_0710&SUBSYS_3345103C.DeviceDesc = "HP NC553m Dual Port FlexFabric 10Gb Network Adapter" 
+PCI\VEN_19A2&DEV_0710&SUBSYS_3315103C.DeviceDesc = "HP NC553i Dual Port FlexFabric 10Gb Converged Network Adapter" 
+PCI\VEN_19A2&DEV_0710&SUBSYS_3376103C.DeviceDesc = "HP FlexFabric 10Gb 2-port 554FLR-SFP+ Adapter"
+PCI\VEN_19A2&DEV_0710&SUBSYS_337B103C.DeviceDesc = "HP FlexFabric 10Gb 2-port 554FLB Adapter"
+PCI\VEN_19A2&DEV_0710&SUBSYS_337C103C.DeviceDesc = "HP FlexFabric 10Gb 2-port 554M Adapter"
+PCI\VEN_19A2&DEV_0710&SUBSYS_3391103C.DeviceDesc = "HP AT093A 10GbE-SFP PCIe 1p 8Gb FC and 1p 1/10GbE Adtr"
+PCI\VEN_19A2&DEV_0710&SUBSYS_3392103C.DeviceDesc = "HP AT094A 10GbE-SFP PCIe 2p 8Gb FC and 2p 1/10GbE Adtr"
+PCI\VEN_19A2&DEV_0710&SUBSYS_177B103C.DeviceDesc = "HP BL8X0c i3 Dual Port FlexFabric 10Gb Embedded CNIC"
+PCI\VEN_19A2&DEV_0710&SUBSYS_184E103C.DeviceDesc = "HP Flex-10 10Gb 2-port 552M Adapter"
+
+;Fujitsu
+PCI\VEN_19A2&DEV_0710&SUBSYS_11A31734.DeviceDesc = "Emulex OneConnect OCe11101-N, NIC/TOE"
+PCI\VEN_19A2&DEV_0710&SUBSYS_11A41734.DeviceDesc = "Emulex OneConnect OCe11102-N, NIC/TOE"
+PCI\VEN_19A2&DEV_0710&SUBSYS_11A51734.DeviceDesc = "Emulex OneConnect OCm11102-N, NIC/TOE"
+
+;Fujitsu 1G
+PCI\VEN_19A2&DEV_0710&SUBSYS_11C11734.DeviceDesc = "Emulex OneConnect OCl11102-LOM 2-port PCIe 10GbE Converged Network Adapter"
+PCI\VEN_19A2&DEV_0710&SUBSYS_11C21734.DeviceDesc = "Emulex OneConnect OCl11102-LOM 2-port PCIe 10GbE Converged Network Adapter"
+PCI\VEN_19A2&DEV_0710&SUBSYS_11C91734.DeviceDesc = "Emulex OneConnect OCl11102-LOM 2-port PCIe 10GbE Converged Network Adapter"
+
+;-------------------------------------------------------------------------------
+; Nomad
+;-------------------------------------------------------------------------------
+PCI\VEN_19A2&DEV_0710&SUBSYS_E72110DF.DeviceDesc = "Dell OneConnect P2T4M 1-port PCIe 10GbE NIC"
+PCI\VEN_19A2&DEV_0710&SUBSYS_E73210DF.DeviceDesc = "Dell OneConnect 3GHXC 1-port Mezzanine 10GbE NIC"
+
+; Names for the property tree, where the category uniquely identifies the property.
+TCPOffload                       = "TCP Connection Offload"
+TCPOffloadv6                     = "TCP Connection Offload"
+LSO                              = "Large Send Offload v1"
+LSOV2IPv4                        = "Large Send Offload v2"
+LSOV2IPv6                        = "Large Send Offload v2"
+RscIpv4                          = "Receive Segment Coalescing"
+RscIpv6                          = "Receive Segment Coalescing"
+TCPChecksumOffload               = "TCP Checksum Offload"
+UDPChecksumOffload               = "UDP Checksum Offload"
+TCPChecksumOffloadV6             = "TCP Checksum Offload"
+UDPChecksumOffloadV6             = "UDP Checksum Offload"
+IPChecksumOffload                = "IP Checksum Offload"
+
+; Names for a flat property display that must be unique.
+Unique_TCPOffload                = "IPv4 TCP Connection Offload"
+Unique_TCPOffloadv6              = "IPv6 TCP Connection Offload"
+Unique_LSO                       = "IPv4 Large Send Offload v1"
+Unique_LSOV2IPv4                 = "IPv4 Large Send Offload v2"
+Unique_LSOV2IPv6                 = "IPv6 Large Send Offload v2"
+Unique_RscIpv4                   = "Recv Segment Coalescing (IPv4)"
+Unique_RscIpv6                   = "Recv Segment Coalescing (IPv6)"
+Unique_TCPChecksumOffload        = "IPv4 TCP Checksum Offload"
+Unique_UDPChecksumOffload        = "IPv4 UDP Checksum Offload"
+Unique_TCPChecksumOffloadV6      = "IPv6 TCP Checksum Offload"
+Unique_UDPChecksumOffloadV6      = "IPv6 UDP Checksum Offload"
+Unique_IPChecksumOffload         = "IPv4 Checksum Offload"
+Unique_NumRssQueues              = "RSS Queues"
+
+LocallyAdministeredAddress = "Network Address"
+ReceiveBuffers             = "Receive Buffers"
+TransmitBuffers            = "Transmit Buffers"
+1514                       = "1514"
+4088                       = "4088"
+8222                       = "8222"
+9014                       = "9014"
+Vlan                       = "VLAN Identifier (802.1q)"
+SE                         = "Emulex"
+RSS                        = "RSS"
+VMQ                        = "VMQ"
+FlowControl                = "Flow Control"
+Enable                     = "Enable"
+Disable                    = "Disable"
+TX                         = "Tx Enabled"
+RX                         = "Rx Enabled"
+FCDisable                  = "Tx Disable/Rx Disable"
+RXandTX                    = "Tx Enable/Rx Enable"
+None                       = "None"
+TxEnableRxDisable          = "Tx Enable/Rx Disable"
+RxEnableTxDisable          = "Tx Disable/Rx Enable"
+JumboPacket                = "Packet Size"
+InterruptModeration        = "Interrupt Moderation"
+DataRate                   = "Max Transmit Data Rate (Mbps)"
+IntModNone                 = "0 No Moderation"
+IntModFixed                = "1 Static Moderation"
+IntModMinimal              = "2 Adaptive Highest Int/sec"
+IntModDefault              = "3 Adaptive High Int/sec"
+IntModAggression           = "4 Adaptive Medium Int/sec"
+IntModExtreme              = "5 Adaptive Low Int/sec"
+IntModRidiculous           = "6 Adaptive Lowest Int/sec"
+ToeOptLevel                = "TCP Offload Optimization"
+ToeOptThroughput           = "Optimize Throughput"
+ToeOptLatency              = "Optimize Latency"
+EtsMode                    = "Enhanced Transmission Selection"
+EtsModeDisable             = "Disabled"
+EtsModeEnable             = "Enabled"
+WakeOnLan                  = "Wake On LAN"
+WakeOnLanDisable           = "Disabled"
+WakeOnLanEnable            = "Enabled"
+RxCpu                      = "Receive CPU"
+TxCpu                      = "Transmit CPU"
+NumaNode                   = "Preferred NUMA Node"
+VmqLookaheadSplit          = "Lookahead Split"
+VmqTransmit                = "Transmit Queues"
+ClassOfServiceMode         = "Class of Service (802.1p)"
+CosDcbxPriority            = "Auto Priority Pause"
+CosNonStorage              = "Filtered Priority"
+CosUser                    = "User Priority"
+CosDisabled                = "Disable Priority"
+NumRssQueues               = "RSS Queues"
+RssBaseCpu                 = "RSS Base CPU"
+
+
+
+
+
+be2net.DeviceDesc        = "Emulex 10Gb NIC"
+be2net.Service.DispName  = "Emulex 10Gb NIC"
+MEDIA_DESCRIPTION        = "Emulex 10Gb Networking Software for Windows"
+REG_DWORD      = 0x00010001
+
+
+;-----------------------------------------------------------------------------
+; Paths defining the layout of properties in the GUI.
+;-----------------------------------------------------------------------------
+Performance      = "Performance"
+PerformanceCpu   = "Performance/CPU Affinity"
+PerformanceVmq   = "Performance/Virtual Machine Queues"
+Configuration    = "Configuration"
+ProtocolOffload  = "Protocol Offloads"
+ProtocolOffload4 = "Protocol Offloads/IPv4"
+Checksum4        = "Protocol Offloads/IPv4/Checksum"
+ProtocolOffload6 = "Protocol Offloads/IPv6"
+Checksum6        = "Protocol Offloads/IPv6/Checksum"
+
+; The help text and error text file name.
+HelpFile = "bepnic.rtf"
+ErrFile = "bepnic.rtf"
+
+
+;-----------------------------------------------------------------------------
+; Ndi standard registry keys descriptions
+;-----------------------------------------------------------------------------
+FlowControlDesc                     = "Flow Control"
+IPChecksumOffloadIPv4Desc           = "IPv4 Checksum Offload"
+JumboPacketDesc                     = "Packet Size"
+LsoV1IPv4Desc                       = "Large Send Offload Version 1"
+NetworkAddressDesc                  = "Network Address"
+ReceiveBuffersDesc                  = "Receive Buffers"
+RSSDesc                             = "Receive Side Scaling"
+TCPChecksumOffloadIPv4Desc          = "TCP Checksum Offload (IPv4)"
+TCPConnectionOffloadIPv4Desc        = "TCP Connection Offload (IPv4)"
+TransmitBuffersDesc                 = "Transmit Buffers"
+UDPChecksumOffloadIPv4Desc          = "UDP Checksum Offload (IPv4)"
+WakeOnMagicPacketDesc               = "Wake on Magic Packet"
+WakeOnPatternDesc                   = "Wake on Pattern Match"
+
+
+
+LsoV2IPv4Desc                       = "Large Send Offload Version 2 (IPv4)"
+LsoV2IPv6Desc                       = "Large Send Offload Version 2 (IPv6)"
+NumaNodeIdDesc                      = "Preferred NUMA node"
+TCPChecksumOffloadIPv6Desc          = "TCP Checksum Offload (IPv6)"
+
+UDPChecksumOffloadIPv6Desc          = "UDP Checksum Offload (IPv6)"
+VMQDesc                             = "Virtual Machine Queues"
+VmqLookaheadSplitDesc               = "VMQ Lookahead Split"
+
+
+
+
+NumRssQueuesDesc                    = "RSS Queues"
+RssBaseProcGroupDesc                = "RSS Base Processor Group"
+RssBaseProcNumberDesc               = "RSS Base Processor Number"
+
+
+
+
+;-----------------------------------------------------------------------------
+; Emulex standard registry keys descriptions
+;-----------------------------------------------------------------------------
+
+
+RscIpv4Desc                         = "Recv Segment Coalescing (IPv4)"
+RscIpv6Desc                         = "Recv Segment Coalescing (IPv6)"
+
+
+
+;-----------------------------------------------------------------------------
+

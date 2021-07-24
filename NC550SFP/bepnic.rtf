@@ -1,0 +1,280 @@
+{\rtf1\ansi\ansicpg1252\deff0\deflang1033\deflangfe1033{\fonttbl{\f0\fswiss\fprq2\fcharset0 Verdana;}{\f1\fmodern\fprq1\fcharset0 Courier New;}{\f2\fnil\fcharset2 Symbol;}}
+{\colortbl ;\red0\green128\blue128;}
+{\*\generator Msftedit 5.41.21.2509;}\viewkind4\uc1\pard\nowidctlpar\b\f0\fs16 [Section:begin]  Do not move or remove this line.  Edit with WORDPAD.exe\par
+\b0\par
+    COPYRIGHT: \par
+\par
+    This program is an unpublished work fully protected by the United\par
+    States copyright laws and is considered a trade secret belonging to\par
+    Emulex.  To the extent that this work may be considered "published," \par
+    the following notice applies "\'a9 2010, Emulex"  Any unauthorized use, \par
+    reproduction, distribution, display, modification, or disclosure of this \par
+    program is strictly prohibited.\par
+\par
+\b [Section:NetworkAddress]\par
+\b0 This overrides the permanent MAC address for the interface. The MAC address should follow this format XX:XX:XX:XX:XX:XX, where X is a hex digit (0-9 or A-F).\par
+\par
+\pard{\pntext\f2\'B7\tab}{\*\pn\pnlvlblt\pnf2\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-180\li180 The address \b cannot \b0 be a multicast address, which has the lowest bit in the first byte set.\par
+{\pntext\f2\'B7\tab}The address \b cannot\b0  be all zeros.\par
+\pard\nowidctlpar\par
+For example, 01:00:00:00:00:00 is not valid, while 02:00:00:00:00:00 is valid.\cf1\par
+\cf0\par
+\b [Section:*JumboPacket]\par
+\b0 This parameter determines the maximum packet size transmitted and received on the interface. A 1514 byte frame size is standard, while larger packets are called jumbo frames.\par
+\par
+Using a higher frame size is generally more efficient, but it uses more system memory. A larger frame size also requires support on the network switch.\par
+\par
+\b [Section:InterruptModerationLevel]\par
+\b0 The network device uses interrupt moderation algorithms to reduce the total amount of CPU cycles spent processing interrupts which increases efficiency for the system. However, interrupt moderation increases the latency of each send and receive. It should only be disabled when short latencies are more important than efficient CPU utilization.\par
+\par
+The "No Moderation" setting disables all delays to minimize latency. \par
+\par
+The "Static Moderation" uses a constant interrupt delay to avoid any spikes in interrupt rate. \par
+\par
+The dynamic settings cause the driver to dynamically maintain a target interrupt rate. If CPU usage is too high, choose a higher adaptive value to increase the interrupt delays (and reduce the rate of interrupts).\par
+\par
+\b [Section:*LsoV1IPv4]\par
+\b0 Large Send Offload allows the NIC hardware to segment large TCP packets (up to 64kB) into smaller packets (<= "Packet Size") that may be transmitted. This segmentation will increase transmit efficiency for TCP applications that send large buffers. During segmentation, the hardware computes the IPv4 and TCP checksums for each individual packet.\par
+\par
+The Windows Version 1 LSO supports only IPv4.\par
+\par
+\b [Section:*LsoV2IPv4]\par
+\b0 Large Send Offload allows the NIC hardware to segment large TCP packets (up to 64kB) into smaller packets (<= "Packet Size") that may be transmitted. This segmentation will increase transmit efficiency for TCP applications that send large buffers. During segmentation, the hardware computes the IPv4 and TCP checksums for each individual packet.\par
+\par
+The Windows Version2 LSO supports for IPv4 supports larger offload sizes.\par
+\par
+\b [Section:*LsoV2IPv6]\par
+\b0 Large Send Offload allows the NIC hardware to segment large TCP packets (up to 64kB) into smaller packets (less than the MTU) that may be transmitted. This segmentation will increase transmit efficiency for TCP applications that send large buffers. During segmentation, the hardware computes the TCP checksums for each individual packet.\par
+\par
+IPv6 support requires LSO Version 2, included in Windows 2008 and later.\par
+\par
+\b [Section:RSCIPv4]\par
+\b0 Receive Segment Coalescing merges multiple TCP segments and indicates them as a single coalesced unit to the operating system's TCP/IP stack. This reduces the per-packet receive processing overhead and CPU usage, when standard 1514 byte sized frames are in use.\par
+\par
+\b [Section:RSCIPv6]\par
+\b0 Receive Segment Coalescing merges multiple TCP segments and indicates them as a single coalesced unit to the operating system's TCP/IP stack. This reduces the per-packet receive processing overhead and CPU usage, when standard 1514 byte sized frames are in use.\par
+\par
+\b [Section:TxCpuPolicy]\par
+\b0 Transmit packet completion processing will be done on this CPU.  By default, the driver will intelligently choose a CPU in the system, so this parameter should only be set for advanced performance tuning.\par
+\par
+The valid values are 0 to (num CPU - 1).  \par
+\par
+\b [Section:RxCpuPolicy]\par
+\b0 The non-RSS receive packets are processed on this logical CPU. By default, the driver will intelligently choose a CPU in the system, so this parameter should only be set for advanced performance tuning. RSS packets will be processed by the set of RSS CPUs provided by Windows operating system.\par
+\par
+The valid values are 0 to (num CPU - 1).  \par
+\par
+\b [Section:ToeOptLevel]\par
+\b0 This parameter only applies to TCP connection offload, that must be enabled in the "Protocol Offloads" section.\b\par
+\par
+\b0 Most applications will perform better with TCP Offload Optimization set to "Optimize Throughput" which handles large data transfers with minimal CPU impact. \par
+\par
+Setting this parameter to "Optimize Latency" will cause receive data to be delivered to the application without waiting for a TCP PSH. This causes additional receive indications that will typically decrease total throughput.\par
+\par
+\b [Section:*TransmitBuffers]\par
+\b0 This sets the number of Ethernet transmits that may be posted to the hardware at any given time. \par
+\par
+The default value is sufficient to achieve maximum performance.  Reducing this value will conserve system memory.\par
+\par
+\b [Section:*ReceiveBuffers]\par
+\b0 This determines the number of Ethernet receive buffers allocated per receive queue. If RSS is enabled, 4 or more receive queues are used.  Otherwise, a single queue is enabled.\par
+\par
+Decreasing this value will reduce the required system memory, but performance may decrease. Each buffer is the size of the "Packet Size" parameter.\par
+\par
+\b [Section:VlanId]\par
+\b0 If selected, the adapter will add a VLAN tag on all transmitted packets.\par
+\par
+The valid VLAN id range is 1 to 4094.\par
+\par
+\b [Section:*RSS]\par
+\b0 Receive Side Scaling (RSS) scales receive processing over multiple CPUs in parallel. This scaling typically improves application performance; however, it tends to increase CPU usage on low end machines.\par
+\par
+RSS is only supported on two primary adapters per device. It will appear disabled for additional PCI functions in blade server configurations.\par
+\par
+RSS requires Windows 2003 SP2 and later.\par
+\par
+\b [Section:*NumRssQueues]\par
+\b0 When RSS is enabled, this parameter controls the number of receive queues.  \par
+\par
+Typically, this will be left at the maximum value.  Windows will reduce the number of queues as necessary based on the number of installed CPU cores.\par
+\par
+This value may be reduced during performance tuning for a particular application.  It is possible that system performance may improve by limiting the number of RSS queues.\par
+\par
+\b [Section:*RssBaseProcNumber]\par
+\b0 Windows will automatically spread the RSS queues for all network cards over the available CPU cores in the computer.  This parameter may be set to explicitly define the CPU affinity for the RSS queues of this device.  It is the CPU number of the lowest RSS queue for this device.\par
+\par
+Hyperthreaded systems will only use the lower thread of each core for RSS.  A hyperthreaded system with 16 logical processors will only use 8 RSS threads.\par
+\par
+\b [Section:*RssBaseProcGroup]\par
+\b0 On systems with greater than 64 CPUs, Windows will divide the CPUs into groups.  This parameter controls the base processor group for the RSS CPUs.\par
+\par
+\b [Section:*FlowControl]\par
+\b0 The IEEE 802.3x Ethernet specification defines a control frame between peers that can request a pause in packet transmissions. This allows one system to request a temporary halt of all incoming traffic when receive buffer space is exhausted.\par
+\par
+The network device may be configured to respond to pause frames (Rx Enable) and/or to send pause frames (Tx Enable). Flow control is almost always advantageous to avoid packet drops on the network. The switch or network peer must also have flow control enabled.\par
+\par
+\b [Section:WakeOnLan]\par
+\b0 Enabling this parameter allows the network device to wake up the computer when a magic packet is received during standby. \par
+\par
+In blade server configurations, Wake On Lan is only supported on two primary adapters per device. Additional PCI functions will appear disabled.\par
+\par
+\b [Section:*TCPConnectionOffloadIPv4]\par
+\b0 If TCP offload is enabled, the device offloads the entire TCP protocol, including ACK processing, retransmits, and timers. Applications that prepost receive buffers (before the data arrives) may avoid data copies in the receive path, which will substantially increase the system efficiency and data rates.\par
+\par
+Windows will \b not \b0 offload TCP connections if any of the following are enabled: \par
+\pard{\pntext\f2\'B7\tab}{\*\pn\pnlvlblt\pnf2\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-180\li180 Windows Firewall Service (Server 2003)\par
+{\pntext\f2\'B7\tab}Network Load Balancing\par
+{\pntext\f2\'B7\tab}IPSEC\par
+{\pntext\f2\'B7\tab}Network Address Translation\par
+{\pntext\f2\'B7\tab}NDIS 5.1 Intermediate Drivers\par
+\pard\nowidctlpar\par
+TCP offload \b must \b0 be enabled in the Windows operating system with the shell commands:\par
+Windows 2003: \f1 netsh int ip set chimney enabled\f0\par
+Windows 2008: \f1 netsh int tcp set global chimney=enabled\f0\par
+\par
+This parameter will appear disabled if the firmware installed on your device does not support TCP connection offload.  Upgrading the firmware may resolve this issue.\par
+\par
+TCP offload requires Windows 2003 SP2.  View the "Statistics" property page to ensure that TCP connection offload is working.\par
+\par
+\b [Section:*TCPChecksumOffloadIPv4]\par
+\b0 This offloads the transmit and/or receive IPv4 TCP checksum computation.\par
+\par
+Offloading checksums will increase system efficiency.\par
+\par
+\b [Section:*TCPChecksumOffloadIPv6]\par
+\b0 This offloads the transmit and/or receive IPv6 TCP checksum computation.\par
+\par
+Offloading checksums will increase system efficiency.\par
+\par
+\b [Section:*UDPChecksumOffloadIPv4]\par
+\b0 This offloads the transmit and/or receive IPv4 UDP checksum computation.\par
+\par
+Offloading checksums will increase system efficiency.\par
+\par
+\b [Section:*UDPChecksumOffloadIPv6]\par
+\b0 This offloads the transmit and/or receive IPv6 UDP checksum computation.\par
+\par
+Offloading checksums will increase system efficiency.\par
+\par
+\b [Section:*IPChecksumOffloadIPv4]\par
+\b0 This offloads the transmit and/or receive IPv4 checksum computation.\par
+\par
+Offloading checksums will increase system efficiency.\par
+\par
+\b [Section:*NumaNodeId]\par
+\b0 Most modern multi-socket servers have separate memory controllers for each CPU socket.  These systems have non-uniform memory access latencies for a given CPU core to access the local versus remote memory node.\par
+\par
+By setting this property, the driver will attempt to use both memory and CPU cores from the given NUMA node.\par
+\par
+For best performance, the network applications should try to use memory and CPU affinity from the same NUMA node. This level of tuning is primarily noticeable when multiple adapters are running.\par
+\par
+\b [Section:ClassOfServiceMode]\par
+\b0 The following modes are supported for selecting 802.1p priority tags:\par
+\pard{\pntext\f2\'B7\tab}{\*\pn\pnlvlblt\pnf2\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-180\li180\b Automatic Priority\b0  - The DCBX standard allows the network adapter to negotiate priority class usage with DCBX aware endpoints such as switches or network cards.  If the peer indicates that priority pause is supported for a non-zero priority, the NIC will automatically insert the default priority in all transmitted packets. This is the default mode, allowing priority pause to operate for both storage and network traffic.  If the peer indicates a zero default priority (such as when the peer does not support priority pause), the device uses the "Non-Storage Priority" mode discussed below.\par
+\b{\pntext\f2\'B7\tab}Filtered Priority\b0  - This mode coerces the user priorities in each packet to avoid sending packets on the network function that may disrupt the converged adapter's storage traffic.  The network device uses the next lower priority if a conflict exists.  This mode is useful if multiple network priorities are necessary.  Only a limited number of classes are supported for priority pause, so typically it will not function optimally in this mode.\par
+\b{\pntext\f2\'B7\tab}User Priority\b0  - This mode allows any user specified priority value.  This mode should be limited to cases where storage functions are not used.\par
+\b{\pntext\f2\'B7\tab}Disable Priority\b0  - The adapter always transmits either untagged packets, or VLAN ID (802.1q) tagged packets with a priority value (802.1p) of zero.\b\par
+\pard\nowidctlpar\b0\par
+\b [Section:*VMQ]\par
+\b0 Virtual Machine Queues are dedicated hardware receive queues for virtual machines that filter receive packets based on the destination MAC address and/or VLAN. Receive buffers can be allocated for each queue from VM memory. \par
+\par
+This improves network throughput by distributing processing of network traffic for multiple VMs among multiple processors. It reduces CPU utilization by offloading receive packet filtering to NIC hardware. VMQs prove beneficial when 4 or more VMs are in use.\par
+\par
+VMQs require Windows Server 2008 R2 or later with Hyper-V.\par
+\par
+\b [Section:*VMQLookaheadSplit]\par
+\b0 If lookahead split is enabled with VMQs, the NIC can directly DMA received packets to the virtual machine memory, eliminating a packet copy from the host to VM.\par
+\par
+Lookahead split requires Advanced Mode Support to be enabled in the BIOS controller configuration. Lookahead split is not supported for jumbo frames.\par
+\par
+\b [Section:VMQTransmit]\par
+\b0 If this option is enabled with VMQs, separate transmit queues are created for each VM network interface. Send and receive interrupts for a VM network interface are processed on the same CPU(s).\b\par
+\b0\par
+\par
+\b [Section:ETS]\par
+\b0 If ETS is enabled, the driver will filter transmit packets based on the 802.1p priority tag into multiple separate transmit rings.  The network switch should be configured for ETS to group priorities into a priority group (or traffic class).  Each priority group may be assigned a QoS bandwidth limit.  One network priority may support priority flow control to achieve loss-less network traffic.  Using separate hardware interfaces in the driver allows each priority to progress at a different rate, or pause temporarily,  without affecting the other priorities.\par
+\par
+When ETS is enabled, all configuration regarding bandwidth and priority flow control should be done on the network switch.  The adapter will learn the configuration using the DCBx protocol.\par
+\par
+ETS is not supported in conjunction with VMQ technology.\par
+\par
+\par
+\b [Section:Tree Categories]\b0\par
+\par
+\par
+\b [Section:Configuration]\par
+\b0 Configuration parameters must be set correctly for the device to operate on the network.  These parameters typically require corresponding changes to the network switch or network peer device.\par
+\par
+\b [Section:Performance]\par
+\b0 This section includes parameters that help tune the performance of the device.  These parameters may need to be configured based on the system capabilities or application requirements.\par
+\par
+\b [Section:PerformanceCpu]\par
+\b0 For performance tuning, these advanced parameters allow isolating CPU usage to a particular NUMA node or CPU core.\par
+\par
+\b [Section:PerformanceVmq]\par
+\b0 These advanced parameters enable VM performance tuning.\par
+\par
+\b [Section:ProtocolOffload]\par
+\b0 Protocol offloads help reduce CPU usage on the system.  They include stateless offload for checksum computations and segmentation offload for TCP, or full TCP protocol offload. \par
+\par
+\b [Section:ProtocolOffload4]\par
+\b0 This section details IPv4 protocol offloads.\par
+\par
+\b [Section:Checksum4]\par
+\b0 This section includes the various checksum offloads for IPv4 packets.\par
+\par
+\b [Section:ProtocolOffload6]\par
+\b0 This section details IPv6 protocol offloads.\par
+\par
+\b [Section:Checksum6]\par
+\b0 This section includes the various checksum offloads for IPv6 packets.\par
+\par
+\b [Section:ERROR MESSAGES.]\par
+\b0\par
+\par
+\b [Section:DuplicateVlanId]\b0\par
+Invalid VLAN ID. The specified value is already is use. Modify the VLAN ID or select a dedicated ring interface.\par
+\par
+\b [Section:InvalidVlanRing]\par
+\b0 Invalid parameters. The interface must be VLAN tagged, a dedicated hardware ring, or both.\par
+\par
+\b [Section:InvalidVlanId]\b0\par
+Invalid VLAN ID. The valid range is <min> to <max>.\par
+\par
+\b [Section:InvalidPacketSize]\par
+\b0 Invalid Packet Size. The valid range is <min> to <max>."\par
+\par
+\b [Section:InvalidRxBuffers]\b0\par
+Invalid Receive Buffers. The valid range is <min> to <max>.\par
+\par
+\b [Section:InvalidDataRate]\par
+\b0 Invalid Max Transmit Data Rate. The valid range is <min> to <max> Mbits/sec.\par
+\par
+\b [Section:InvalidPacketRate]\par
+\b0 Invalid Max Transmit Packet Rate. The valid range is <min> to <max> packets/sec.\par
+\par
+\b [Section:NetCfgLocked]\par
+\b0 Some of the controls on this property sheet are disabled because another Network or Device Property sheet is open. Close all property sheets, and reopen this one.\par
+\par
+\b [Section:Range]\par
+\b0 The value is out of range. The valid range is from <min> to <max>.\par
+\b\par
+[Section:InvalidEnum]\par
+\b0 Invalid value. The legal values are:\par
+\par
+\b [Section:Caption]\par
+\b0 Error\par
+\par
+\b [Section:InvalidMacAddress]\par
+\b0 The Network Address is invalid.\par
+\par
+The MAC address should follow this format XX:XX:XX:XX:XX:XX, where X is a hex digit (0-9 or A-F).\par
+\par
+\pard{\pntext\f2\'B7\tab}{\*\pn\pnlvlblt\pnf2\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-180\li180 The address \b cannot \b0 be a multicast address, which has the lowest bit in the first byte set.\par
+{\pntext\f2\'B7\tab}The address \b cannot\b0  be all zeros.\par
+\pard\nowidctlpar\par
+For example, 01:00:00:00:00:00 is not valid, while 02:00:00:00:00:00 is valid.\par
+\par
+\b [Section:end] Do not move or remove\par
+}
+ 
